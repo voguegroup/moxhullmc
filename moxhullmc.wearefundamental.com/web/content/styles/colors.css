@@ -1,0 +1,154 @@
+/* 
+THEME MAIN COLORS
+---------------------
+This theme has two main colors. 
+If you like to change them just replace to color that you want.
+*/
+
+/* 1st color */
+h1 span, h2 span, h3 span ,h4 span, h5 span, h6 span,
+.header_title h1 span, .header_title strong span,
+.entry .price_col_foot a,
+.week_offer .link_more a:hover, .special_offers .link_more a:hover,
+.car_types_list .link_more,
+.breadcrumbs p a:hover,
+.postlist .post-item .link_more,
+.postlist .post-title h2 a:hover,
+.entry a:hover,
+.pages_jump .inputSmall:focus,
+.pages .manage_title strong,
+.offer_details .offer_price strong,
+.details_tabs .tabcontent h3,
+.details_form .label_title,
+a:hover, a:focus,
+.btn_white span strong,
+.week_offer .offer_price,
+.special_text h3 a:hover,
+.special_price,
+.service_item h2 a:hover,
+.service_descr h3,
+.brand_list2 li:hover a,
+.content .widget_featured_posts .post-descr a,
+.sidebar .widget-container .current-menu-item a,
+.sidebar .widget-container .current-menu-ancestor a,
+.sidebar .widget-container .current-menu-item li a:hover,
+.sidebar .widget-container .current-menu-ancestor li a:hover,
+.sidebar .widget-container .current-menu-ancestor .current-menu-item a,
+.sidebar .widget_archive li a:hover,
+.widget_featured_posts .post-title a:hover,
+.widget_calendar table a:hover,
+.widget_tag_cloud .tagcloud a,
+.post-item .post-meta a:hover,	
+.entry .post-item .post-meta a:hover,
+.post-share,
+a.link-author:hover, .link-reply:hover,
+.offer_list .offer_item h2 a:hover, .offer_list .offer_price,
+.text_box p a:hover,
+.quote-author, .quote-author span, .testimonials .quote-author,
+.sidebar .quote-author, .sidebar .quote-author span,
+.copyright a,
+.faq_q, .faq_question.active,
+.brand_list .link_more:hover,
+.sidebar .widget-container li a:hover,
+.content .widget-container li a:hover,
+.widget-container.widget_nav_menu a:hover,
+.widget-container.widget_nav_menu .current-menu-item li a:hover,
+.widget-container.widget_categories a:hover,
+.widget-container.widget_categories .current-menu-item li a:hover,
+.widget-container.widget_archive a:hover,
+.widget-container.widget_links a:hover,
+.widget-container.widget_meta a:hover,
+.widget-container.widget_pages a:hover,
+.widget_calendar #today,
+.sidebar .contact-address .mail a:hover,
+.post_list li a:hover,
+.widget_recent_posts .post-meta a, .widget_popular_posts .post-meta a,
+.widget_recent_posts .post-meta .link-comments, .widget_popular_posts .post-meta .link-comments,
+.widget_recent_posts .post-meta a:hover, .widget_popular_posts .post-meta a:hover,
+.widget_recent_posts ul li .post-title:hover, .widget_popular_posts ul li .post-title:hover,
+.content .widget_recent_entries .post-meta a, .sidebar .widget_recent_entries .post-meta a,
+.dropdown .mega-nav .widget_featured_posts .post-author,
+.info_price, .featured_caption p span,
+#adv_search_open,
+.sidebar .widget_twitter .tweet_time,
+.author-name, .link-author,
+.widget_login .forget_password a:hover {
+	color:#c135ca}
+
+.dropdown .mega-nav .link-more,
+.dropdown .mega-nav .more-nav a,
+.dropdown .mega-nav .post-more a,
+.tp-caption.subtitle span,
+.btn_save, .btn_send, .rowSubmit .btn_send,
+.tf_pagination .page_prev, .tf_pagination .page_next {
+	color:#c135ca !important}
+
+.widget_tag_cloud .tagcloud a:hover,
+.tf_pagination .page_prev:hover,
+.tf_pagination .page_next:hover,
+.btn_send:hover, .btn_save:hover{
+	background-color:#c135ca}
+
+.btn_default, .btn_search,
+.btn-submit, input.btn-submit, .comment-form .btn-submit,
+.widget_search input.btn-submit,
+.btn_send:hover, .btn_save:hover,
+.tf_pagination .page_prev:hover, .tf_pagination .page_next:hover {
+	background-color:#c135ca;
+	border-color:#6f389d;
+	color:#fff !important}
+
+/* 2nd color */
+a, a:visited,
+.dropdown .menu-level-0.last a, 
+.dropdown .menu-level-0.last:hover a,
+.dropdown li:hover a,
+.dropdown li ul li:hover a,
+.dropdown li:hover li ul li:hover a,
+.dropdown .current-menu-ancestor .current-menu-item a,
+.dropdown .current-menu-ancestor .current-menu-ancestor a,
+.dropdown .current-menu-ancestor .current-menu-ancestor .current-menu-item a,
+.dropdown .mega-nav ul li:hover ul li:hover a,
+.dropdown .mega-nav .widget_twitter .tweet_item a,
+.dropdown .mega-nav .widget_recent_entries li a:hover,
+.dropdown .mega-nav .widget_featured_posts li .post-title a:hover,
+.dropdown .mega-nav .widget_twitter .tweet_item a:hover,
+.info_line,
+.footer_address .notice,
+.testimonials .quote-text a,
+.week_offer .offer_text h3 a,
+.special_text h3 a,
+.latest_offers .link_more,
+.brand_list .link_more, .brand_list2 li a,
+.breadcrumbs .link_search, .breadcrumbs .link_back,
+.link-news-rss span,
+.sidebar .widget_archive li a,
+.widget_twitter .tweet_item a,
+.widget_calendar table a,
+.widget_recent_posts ul li .post-title, 
+.widget_popular_posts ul li .post-title,
+.content .link-arrow,
+.widget_login .forget_password a,
+.post-item .post-meta .info_row,
+.entry a, .text_box p a,
+.tf_pagination .page-numbers:hover, .tf_pagination .page_current,
+.author-text .author-title,
+.link-add-comment, .link-reset,
+.offer_list .offer_item h2 a,
+.offer_specification li .spec_value,
+form .cusel span:hover, form .cusel .cuselOptHover, form .cusel .cuselActive, form .cusel .cuselActive:hover  {
+	color:#97ca35}
+
+::-moz-selection {background:#97ca35}	
+::selection {background:#97ca35}
+
+.tabs_framed .tabs,
+.car_types_list li .front, 
+.car_types_list li .back,
+.details_tabs .tabs li a:hover {background-color:#97ca35;}
+
+.car_types_list li.flip a strong {
+	color:#97ca35}
+
+.car_types_list li a em {
+	color:#333}

@@ -1,6 +1,6 @@
 <?php // Config file for Bluewave CMS
 // Client site details
-$site_name = "Moxhull"; // e.g. Company name
+$site_name = "Moxhull MC"; // e.g. Company name
 $site_url = "http://moxhullmc.wearefundamental.com"; // Client site URL
 $site_email = "tom@voguegroup.co.uk"; // For sending emails such as new user alerts
 $stats_link = ""; // For viewing site analytics

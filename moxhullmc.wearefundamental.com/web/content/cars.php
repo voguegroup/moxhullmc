@@ -282,7 +282,7 @@
             
             <!-- offers list -->
 			<div class="offer_list clearfix">
-            
+            <?php //this is where i'll put the for loop ?>
 				<div class="offer_item clearfix">
                 	<div class="offer_image"><a href="vehicle.php"><img src="images/temp/prod_img_07.jpg" alt=""></a></div>
                     <div class="offer_aside">

@@ -1,5 +1,5 @@
 <?php
-require_once('admin/congig/mysql_connect.inc');
+require_once('admin/config/mysql_connect.inc');
 
 $delete = "DELETE FROM feed";
 

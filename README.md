@@ -1,5 +1,11 @@
 # moxhullmc
-Just making a change here to see how quick it updates
-Test 2
-Adam writing here...
-Adam on line 5
+Moxhull MC. Designed and Developed by Vogue Creative.
+
+Includes Fundamental CMS
+Includes jQuery
+Includes rs-plugin
+Includes prettyPhoto
+Includes jslider
+Includes shtheme
+
+hello@voguecreative.co.uk

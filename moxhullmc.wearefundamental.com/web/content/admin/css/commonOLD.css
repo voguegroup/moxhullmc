@@ -1,0 +1,173 @@
+body {
+	min-width:760px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	color: #113247;
+}
+
+#header,#menu,#page-text,#content,#footer {
+overflow:hidden;display:inline-block
+}/* safari and opera need this */
+#header,#menu,#footer {
+width:100%
+}/* safari and opera need this */
+#menu {
+margin-top:0px
+}
+#content {
+float:left
+}
+#content {
+width:100%
+}
+#footer {
+clear:left
+} 
+#header,#menu {
+	background-color: #113247;
+}
+#header .container {
+	margin: 0px;
+	padding: 15px;
+	height: 85px;
+	background-image: url(../images/general/bluewave-logo-bg.gif);
+	background-repeat: no-repeat;
+	text-align: right;
+}
+#page-text .container {
+	height: auto;
+	margin: 20px 40px;
+	padding: 0px;
+}
+#page-text .container p {
+	padding: 0px;
+	margin-top: 3px;
+	margin-right: 0px;
+	margin-bottom: 3px;
+	margin-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #666666;
+}
+#content .container {
+	height: auto;
+	margin: 0px 40px;
+	padding: 0px;
+	background-color: #FFFFFF;
+}
+#footer .container {
+	height: auto;
+	border-top-width: 5px;
+	border-top-style: solid;
+	border-top-color: #a0adb5;
+	margin: 20px 40px 0px;
+	padding: 0px;
+}
+#footer .container p {
+	padding: 0px;
+	margin-top: 3px;
+	margin-right: 0px;
+	margin-bottom: 3px;
+	margin-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
+#menu .container {
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 40px;
+	margin-bottom: 0px;
+	margin-left: 40px;
+}
+#menu .container ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+#menu .container li {
+	margin: 0px 7px 0px 0px;
+	padding: 0px;
+	float: left;
+	display: inline;
+}
+#menu .container a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #113247;
+	padding: 5px 15px;
+	padding-top: 1px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+	height: auto;
+	width: auto;
+	line-height: 24px;
+	text-decoration: none;
+	background-image: url(../images/general/top-menu-inactive-bg.gif);
+	background-repeat: repeat-x;
+	background-color: #FFFFFF;
+}
+#menu .container a:link { color: #113247; }
+#menu .container a:visited { color: #113247; }
+#menu .container a:active { color: #113247; }
+#menu .container a:hover {
+	color: #113247;
+	text-decoration: underline;
+	background-image: none;
+	background-color: #FFFFFF;
+}
+#menu .container #current {
+	color: #113247;
+	background-color: #FFFFFF;
+	background-image: none;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+a.button {
+	text-decoration: none;
+	color: #000000;
+	font-size: 0.9em;
+	border: 1px solid #003C74;
+	padding: 3px 7px;
+	background: #E3E3E3 url('../images/button_bg.gif') repeat-x;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+a.button:hover {
+	background: #FFFFFF;
+}
+
+/* Input buttons */
+
+input[type=submit], input[type=button] {
+	color: #000000;
+	font-size: 0.9em;
+	border: 1px solid #003C74;
+	padding: 3px 7px;
+	background: #E3E3E3 url('../images/button_bg.gif') repeat-x;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover, input[type=button]:hover {
+	background: #FFFFFF;
+}
+
+input[disabled], input[disabled]:hover {
+	background: #F5F4EA;
+	color: #ACA899;
+	border: 1px solid #C9C7BA;
+}

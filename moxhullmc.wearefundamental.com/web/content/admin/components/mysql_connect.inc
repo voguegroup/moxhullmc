@@ -2,7 +2,7 @@
 
 
 
-include(dirname(__FILE__) . '/../config.php');
+include(dirname(__FILE__) . '/../config/configmysql.php');
 
 
 

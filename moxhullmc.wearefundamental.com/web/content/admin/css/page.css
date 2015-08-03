@@ -1,0 +1,147 @@
+#content {
+width:100%
+}
+
+#page-pad {
+	background-color: #F6F6F6;
+	margin: 10px;
+	padding: 20px 40px 40px;
+}
+#page-internal-nav {
+	background-color: transparent;
+	height: 20px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	padding-top: 4px;
+}
+#page-internal-nav ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0px;
+	padding-bottom: 4px;
+}
+#page-internal-nav li
+{
+display: inline;
+text-align: center;
+margin: 0 5px 0 0px;
+}
+#page-internal-nav li a
+{
+	padding: 3px 20px;
+	color: #516579;
+	background-color: #F2F2F2;
+	text-decoration: none;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+#page-internal-nav li a:hover
+{
+	color: #516579;
+	background-color: #ffffff;
+	text-decoration: underline;
+}
+#page-internal-nav li a#pagecurrent
+{
+	color: #516579;
+	background-color: #ffffff;
+	text-decoration: underline;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #ffffff;
+}
+#page-container {
+	margin: -2px 0px 0px;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+}
+#page-pad-title {
+	margin: 0px 0px 15px;
+	padding: 0px 10px 10px 0px;
+}
+#page-pad-title h1 {
+	font-size: 22px;
+	color: #666666;
+	padding: 0px;
+	margin: 0px;
+}
+#page-pad-title p {
+	font-size: 12px;
+	color: #666666;
+	padding: 0px;
+	margin: 0px;
+}
+#loadingoverlay {
+
+	height: 160%;
+	background-color: #000;
+	filter:alpha(opacity=50);
+	opacity: 0.5;
+	-moz-opacity:0.5;
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 30px;
+	z-index: 5;
+	visibility:hidden;
+}
+
+#loadingoverlay div {
+	padding: 400px;
+	font-weight: bold;
+	color: #000;	
+	position: relative;
+}
+table
+{
+border: 1px solid #FFFFFF;
+}
+table tr td
+{
+border: 1px solid #FFFFFF;
+}
+
+td.section_section {
+	padding-left: 50px;
+}
+
+td.section_category {
+	padding-left: 100px;
+}
+
+option.area {
+	font-weight: bold;
+}
+
+option.section {
+	padding-left: 30px;
+}
+
+option.category {
+	padding-left: 60px;
+	font-style: italic;
+}
+
+span.page_desc {
+	margin-top: 3px;
+	display: block;
+}

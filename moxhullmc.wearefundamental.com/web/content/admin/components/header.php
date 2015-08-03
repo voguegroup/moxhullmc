@@ -1,0 +1,1 @@
+<a href="<?php echo $site_url; ?>" target="_blank"><img src="/images/client-logo.gif" alt="<?php echo $site_name; ?>" border="0" /></a>

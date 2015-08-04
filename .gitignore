@@ -2,3 +2,5 @@
 config.php
 
 mysql_connect.inc
+
+feed.php

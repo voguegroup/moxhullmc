@@ -63,7 +63,7 @@
 	            latitude: 52.5448775,
             	longitude: -1.760377,
 	            title: "Moxhull Motor Company",
-	            html:"<strong>Backgrove Farm Estate</strong> <br> Bulls Lane, Wishaw, Sutton Coldfield B76 9QN<br>Tel.: 0121 123 4567",
+	            html:"Unit 1 Bricklyn Farm, Bulls Lane, Wishaw, B76 9QN <br>Tel.: 0121 351 3311",
 	            popup: false,
 				icon: {
 					image: 'http://moxhullmc.wearefundamental.com/images/temp/gmap_icon.png',
@@ -145,10 +145,11 @@
                 <div class="box_content clearfix">                	
                 	<div class="left_side contact-address">
 	                	<div class="name"><strong>Moxhull Motor Company</strong></div>
-						<div class="address">Backgrove Farm Estate, Bulls Lane Wishaw, Sutton Coldfield B76 9QN</div>
+						<div class="address">Unit 1 Bricklyn Farm, Bulls Lane, Wishaw, B76 9QN</div>
 						
-                        <div class="row phone"><em>Phone:</em> <span>0121 123 4567</span></div>	                    
+                        <div class="row phone"><em>Phone:</em> <span>0121 351 3311</span></div>	                    
 		                <div class="row mail"><em>Email:</em> <a href="mailto:>sales@moxhullmotorcompany.co.ukm">sales @ moxhullmotorcompany.co.uk</a></div>
+						<div class="social_inner"><a href="#" class="social-fb"><span>Facebook</span></a></div>
                         
                         
 										
@@ -159,10 +160,12 @@
                     <div class="right_side">
 	                    <h3>How to find Moxhull Motor Company</h3>
 	                    <p><strong>From M42</strong><br>
-Leave the M42 and Junction 9 onto Kingsbury Rd/A4097 signed for Minworth. Turn right onto  Wishaw Lane by the White Lion pub. Continue to The Cock Inn restuarant and turn left onto Bulls Lane. Moxhull Motor Company is located on the right after 300 yards.</p><p><form action="http://maps.google.com/maps" method="get" target="_blank">
+Leave the M42 and Junction 9 onto Kingsbury Rd/A4097 signed for Minworth. Turn right onto  Wishaw Lane by the White Lion pub. Continue to The Cock Inn restuarant and turn left onto Bulls Lane. Moxhull Motor Company is located on the right after 300 yards opposite Wishaw Lane.<br>
+<br>
+<strong>On arrival please call 0121 351 3311 to enter the Farm.</strong></p><p><form action="http://maps.google.com/maps" method="get" target="_blank">
    <label for="saddr">Enter your location</label>
    <input type="text" name="saddr" />
-   <input type="hidden" name="daddr" value="Backgrove Farm Bulls Lane B76 9QN" />
+   <input type="hidden" name="daddr" value="Unit 1 Bricklyn Farm, Bulls Lane, Wishaw, B76 9QN" />
    <input type="submit" value="Get directions" />
 </form></p>
                         
@@ -181,8 +184,8 @@ Leave the M42 and Junction 9 onto Kingsbury Rd/A4097 signed for Minworth. Turn r
                 <h2 >Opening Times</h2>
                 
                 <div class="box_content clearfix"> 
-                <p>Mon-Fri: 9am-6pm</p>
-                <p>Sat-Sun: 10am-4pm</p><p>&nbsp;</p>
+                <p>Mon-Fri: 9am-5.45pm</p>
+                <p>Sat: 9am-5pm</p><p>Sun: 11am-3pm</p>
                 <p>Viewings by appointments only</p>
                 </div>
                 

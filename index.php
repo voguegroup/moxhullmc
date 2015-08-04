@@ -65,7 +65,7 @@
                          <a href="#"><strong>OPEN 7 DAYS A WEEK</strong></a>
                     </div>
                     <div class="caption sfr white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                         We guarantee the <span>BEST PRICES</span> for second-hand cars
+                         Supplying <span>HIGH QUALITY</span> second-hand cars
                     </div>
                     
 				</li>
@@ -76,10 +76,10 @@
                     <div class="caption sfb text_line" data-x="550" data-y="360" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
                     
 					<div class="caption sft white_text big_title" data-x="550" data-y="280" data-speed="900" data-start="500" data-easing="easeOutExpo">
-                         <a href="#"><strong>QUALITY USED CARS</strong></a>
+                         <a href="#"><strong>3 MONTHS WARRANTY</strong></a>
                     </div>
                     <div class="caption sfb white_text subtitle" data-x="550" data-y="317" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                         More than <span>3500</span> vehicles in our offer
+                         All cars are also <span>HPI</span> approved
                     </div>
 				</li>
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
@@ -89,10 +89,10 @@
                     <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
                     
 					<div class="caption sfr white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
-                         <a href="#"><strong>UNBEATABLE PRICES</strong></a>
+                         <a href="#"><strong>DRIVE AWAY TODAY</strong></a>
                     </div>
                     <div class="caption sfl white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                        We guarantee <span>BEST PRICES</span> for second-hand cars
+                        We havea range of <span>FINANCE</span> options to suit
                     </div>
 				</li>
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
@@ -102,10 +102,10 @@
                     <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
                     
 					<div class="caption sft white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
-                         <a href="#"><strong>DRIVE AWAY TODAY</strong></a>
+                         <a href="#"><strong>BUY WITH CONFIDENCE</strong></a>
                     </div>
                     <div class="caption sfb black_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
-                       Only the finest breed of <span>Supercars</span>
+                       We accept all major <span>Credit and Debit</span> cards
                     </div>
 				</li>
             </ul>

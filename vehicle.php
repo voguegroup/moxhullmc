@@ -365,7 +365,7 @@ http://mobile.de/auto-inserat/mercedes-benz-ml-63</textarea>
             
             <div class="text_box">
             	<p>
-                <a href="contact.php" class="btn btn_big btn_white"><span>ARRANGE VIEWING <strong>0121 345 6789</strong></span></a>
+                <a href="contact.php" class="btn btn_big btn_white"><span>ARRANGE VIEWING <strong>0121 351 3311</strong></span></a>
                 <a href="mailto:sales@moxhullmotorcompany.co.uk" class="btn btn_big btn_orange"><span>EMAIL US ABOUT THIS CAR</span></a>
                 </p>
             	<p><em>Prices are subject to change. Please see our <a href="privacy.php">Privacy Policy</a> for more info</em></p>
@@ -382,7 +382,7 @@ http://mobile.de/auto-inserat/mercedes-benz-ml-63</textarea>
 	<!-- latest_offers -->
 	<div class="middle_row latest_offers">
 		<div class="container clearfix">         			
-        	<h2>Cars Similar to your search</h2>                    
+        	<h2>Other cars for sale from Moxhull Motor Company</h2>                    
 		</div>
             
         <div id="latest_offers">

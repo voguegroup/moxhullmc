@@ -58,7 +58,7 @@ include($cms_root_url . '/components/log-script.php');
 		<ul id="option-menu">
 			<li onmouseover="this.style.backgroundColor='#f4f4f4';" onmouseout="this.style.backgroundColor='#ffffff';"><a href="car-view.php"><img src="../images/icons/data_48.gif" alt="" name="icon-home" width="48" height="48" hspace="15" vspace="0" border="0" align="left" id="icon-home" /><strong><br />
 			  Cars</strong></a></li> 
-			<li onmouseover="this.style.backgroundColor='#f4f4f4';" onmouseout="this.style.backgroundColor='#ffffff';"></li>
+			
 		</ul>
 			</div>
 			

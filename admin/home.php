@@ -43,7 +43,6 @@ include($cms_root_url . '/components/log-script.php');
 			<li onmouseover="this.style.backgroundColor='#f4f4f4';" onmouseout="this.style.backgroundColor='#ffffff';"><a href="d/d-menu.php"><img src="images/icons/data_48.gif" name="icon-data" width="48" height="48" hspace="10" vspace="0" border="0" align="left" id="icon-data" /><strong>Manage Data / Information</strong><br />Manage dynamic web site data and information stored in the MySQL database.</a></li>
            
             
-			<li onmouseover="this.style.backgroundColor='#f4f4f4';" onmouseout="this.style.backgroundColor='#ffffff';"><a href="s/s-menu.php"><img src="images/icons/support_48.gif" name="icon-support" width="48" height="48" hspace="10" vspace="0" border="0" align="left" id="icon-support" /><strong>BlueWave Support</strong><br />Visit the BlueWave CMS support web site in a new browser window.</a></li>	
 		
 			<li onmouseover="this.style.backgroundColor='#f2f2f2';" onmouseout="this.style.backgroundColor='#ffffff';"><a href="<?php echo $site_url; ?>" target="_blank"><img src="images/icons/home_48.gif" name="icon-home" width="48" height="48" hspace="10" vspace="0" border="0" align="left" id="icon-home" /><strong>View Live Site</strong><br />Open the live front end of the site in a new browser window.</a></li>		
 			

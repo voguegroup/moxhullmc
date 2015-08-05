@@ -19,7 +19,8 @@ $cms_root_url = "/mnt/stor12-wc2-dfw1/589243/moxhullmc.wearefundamental.com/web/
 $user = '589243_mox';
 $password = 'TT9-SLQ-VtT-zkp';
 $db = '589243_mox';
-$host = '72.3.204.197';
+//$host = '72.3.204.197';
+$host = 'mysql51-011.wc2.dfw1.stabletransit.com'; //use this when live
 
 try {
 $dbo = new PDO('mysql:host='.$host.';dbname='.$db, $user, $password);

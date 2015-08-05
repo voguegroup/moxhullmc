@@ -133,9 +133,9 @@ function deleteNo() {
             
                     require($cms_root_url . '/components/mysql_connect.inc');
                     
-                    $query = "SELECT ranges.*, manufacturers.*, piles.* FROM ranges LEFT JOIN manufacturers ON ranges.manufacturer_id=manufacturers.manufacturer_id LEFT JOIN piles ON ranges.pile_id=piles.pile_id " . $order_by_query;
+                    $query = $dbo->prepare("SELECT * FROM cdf " . $order_by_query);
                     
-                    $query_result = mysql_query($query);
+                    $query->execute();
 					
 					echo '<table cellpadding="10" cellspacing="0">';
 						echo '<tr bgcolor="#a0adb5">';
@@ -147,7 +147,7 @@ function deleteNo() {
 							echo '<td align="left" valign="top"><strong>&nbsp;</strong></td>';
 						echo '</tr>';
                     
-                    while ($row = mysql_fetch_assoc($query_result)) {
+                    while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
                     
 						echo '<tr onmouseover="this.style.backgroundColor=\'#f4f4f4\';" onmouseout="this.style.backgroundColor=\'#fafafa\';">';
 							echo '<td align=\"left\" valign=\"middle\">' . $row['range_name'] . '</td>';
@@ -164,25 +164,8 @@ function deleteNo() {
 							
 							echo '<td align=\"left\" valign=\"middle\">';
 							
-							$room_array = substr($row['room_id'], 1, -1);
-							$room_array = explode('|', $room_array);
 							
-							while (!empty($room_array)) {
-								
-								$room_id = array_shift($room_array);	
-
-								$query2 = "SELECT * FROM rooms WHERE room_id=" . $room_id;
-								$result2 = mysql_query($query2);
-								
-								if (mysql_num_rows($result2) == 1) {
-									$row2 = mysql_fetch_assoc($result2);
-									echo $row2['room_name'] . '<br />';
-								}
-								else {
-									echo '<span style="color: red;">Room has been deleted</span><br />';	
-								}
 							
-							}
 							
 							echo '</td>';
 							

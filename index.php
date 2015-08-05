@@ -22,7 +22,7 @@
 
 <!-- main JS libs  -->
 <script src="js/libs/modernizr.min.js"></script>
-<script src="js/libs/respond.min.js"></script>					 
+<script src="js/libs/respond.min.js"></script>
 <script src="js/libs/jquery.min.js"></script>
 
 <!-- scripts  -->
@@ -44,21 +44,21 @@
 
 <body>
 <div class="body_wrap homepage">
-	
+
 	<!-- header top bar -->
 	<?php include ('components/header.php'); ?>
 	<!--/ header top bar -->
-		
+
 <!-- header -->
 <div class="header" style="background:#000">
-            
+
     <!-- header slider -->
-    <div class="fullwidthbanner-container"> 
+    <div class="fullwidthbanner-container">
 		<div class="fullwidthbanner">
         	<ul>
 				<li data-transition="fade" data-slotamount="1" data-masterspeed="500">
 					<img src="images/temp/slider_1_1.jpg" data-fullwidthcentering="on">
-                    
+
                     <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
                     <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
 					<div class="caption sfl white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
@@ -67,14 +67,14 @@
                     <div class="caption sfr white_text subtitle" data-x="10" data-y="257" data-speed="900" data-start="700" data-easing="easeOutExpo">
                          Supplying <span>HIGH QUALITY</span> second-hand cars
                     </div>
-                    
+
 				</li>
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
 					<img src="images/temp/slider_1_2.jpg" data-fullwidthcentering="on">
-                    
+
                     <div class="caption sft text_line" data-x="550" data-y="250" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
                     <div class="caption sfb text_line" data-x="550" data-y="360" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
-                    
+
 					<div class="caption sft white_text big_title" data-x="550" data-y="280" data-speed="900" data-start="500" data-easing="easeOutExpo">
                          <a href="#"><strong>3 MONTHS WARRANTY</strong></a>
                     </div>
@@ -84,10 +84,10 @@
 				</li>
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
 					<img src="images/temp/slider_1_3.jpg" data-fullwidthcentering="on">
-                    
+
                     <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
                     <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
-                    
+
 					<div class="caption sfr white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
                          <a href="#"><strong>DRIVE AWAY TODAY</strong></a>
                     </div>
@@ -97,10 +97,10 @@
 				</li>
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
 					<img src="images/temp/slider_1_4.jpg" data-fullwidthcentering="on">
-                    
+
                     <div class="caption sft text_line" data-x="10" data-y="190" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
                     <div class="caption sfb text_line" data-x="10" data-y="300" data-speed="900" data-start="800" data-easing="easeOutExpo"></div>
-                    
+
 					<div class="caption sft white_text big_title" data-x="10" data-y="220" data-speed="900" data-start="500" data-easing="easeOutExpo">
                          <a href="#"><strong>BUY WITH CONFIDENCE</strong></a>
                     </div>
@@ -109,9 +109,9 @@
                     </div>
 				</li>
             </ul>
-        </div>          
+        </div>
 	</div>
-    
+
     <script>
 
 
@@ -131,7 +131,7 @@
 					navigationArrows:"none",				// nexttobullets, solo (old name verticalcentered), none
 
 					navigationStyle:"round",				// round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
-					
+
 					navigationHAlign:"center",				// Vertical Align top,center,bottom
 					navigationVAlign:"bottom",				// Horizontal Align left,center,right
 					navigationHOffset:0,
@@ -158,7 +158,7 @@
 <!--/ header -->
 
 <!-- middle -->
-    
+
 	<div class="middle_row row_white search_row">
 		<div class="container">
 			<form action="#" class="search_form advsearch_hide clearfix">
@@ -170,19 +170,19 @@
                         <option value="3">BMW</option>
                         <option value="4">Chevrolet</option>
                         <option value="5">Ford</option>
-                        <option value="6">Honda</option>                                                
+                        <option value="6">Honda</option>
                         <option value="7">Lexus</option>
                         <option value="8">Mazda</option>
                         <option value="9">Mercedes Benz</option>
                         <option value="10">Mitsubishi</option>
                         <option value="11">Nissan</option>
                         <option value="12">Opel</option>
-                        <option value="13">Toyota</option>                       
+                        <option value="13">Toyota</option>
                         <option value="14">Volkswagen</option>
-                        <option value="15">Volvo</option>                        
+                        <option value="15">Volvo</option>
                     </select>
                 </div>
-                
+
                 <div class="row field_select">
                     <label class="label_title">Model:</label>
                     <select class="select_styled" name="car_model">
@@ -191,17 +191,17 @@
                         <option value="3">3</option>
                         <option value="4">5</option>
                         <option value="5">7</option>
-                        <option value="6">СX-7</option>                                                
+                        <option value="6">СX-7</option>
                         <option value="7">MVP</option>
                         <option value="8">RX-8</option>
                         <option value="9">MX-3</option>
                         <option value="10">MX-5</option>
                         <option value="11">MX-6</option>
                         <option value="12">BT-50</option>
-                        <option value="13">CX-9</option>                                          
+                        <option value="13">CX-9</option>
                     </select>
                 </div>
-                
+
                 <div class="row field_select">
                     <label class="label_title">Age</label>
                     <select class="select_styled" name="car_year">
@@ -210,12 +210,12 @@
                         <option value="3">Up to 3 year</option>
                         <option value="4">Up to 4 years</option>
                         <option value="5">Up to 5 years</option>
-                        <option value="6">Up to 6 years</option>                                                
+                        <option value="6">Up to 6 years</option>
                         <option value="7">Over 6 years</option>
-                        
+
                     </select>
                 </div>
-                
+
                 <div class="row field_select">
                     <label class="label_title">Price</label>
                     <select class="select_styled" name="car_model">
@@ -227,7 +227,7 @@
                         <option value="6">£6000+</option>
                     </select>
                 </div>
-                
+
                 <div class="adv_search_hidden clearfix">
 					<div class="row field_select">
 						<label class="label_title">Mileage</label>
@@ -239,40 +239,40 @@
 							<option value="5">Over 100,000</option>
 						</select>
 					</div>
-					
+
 					<div class="row field_select">
 						<label class="label_title">Fuel Type:</label>
 						<select class="select_styled" name="car_fuel_type">
 							<option value="1">Petrol </option>
-							<option value="2">Diesel</option>                                                                                     
+							<option value="2">Diesel</option>
 						</select>
 					</div>
-					
+
 					<div class="row field_select">
 						<label class="label_title">Vehicle Type:</label>
 						<select class="select_styled" name="car_type">
 							<option value="1">Hatchback</option>
 							<option value="2">Saloon</option>
-                            <option value="6">Estate</option>   
+                            <option value="6">Estate</option>
 							<option value="3">Convertible</option>
 							<option value="4">MPV</option>
-							<option value="5">Sports & Prestige</option>                                             
+							<option value="5">Sports & Prestige</option>
 						</select>
 					</div>
-					
-					
+
+
                 </div>
-                
+
                 <div class="row rowSubmit">
                 	<label class="label_title" id="adv_search_open">Advanced Search</label>
                     <span class="btn btn_search"><input type="submit" value="SEARCH"></span>
                 </div>
             </form>
             <script type="text/javascript">
-			jQuery(document).ready(function($) {					
+			jQuery(document).ready(function($) {
 				// Show/Hide Advanced Search
 				$(".adv_search_hidden").hide();
-				$("#adv_search_open").click(function(){								
+				$("#adv_search_open").click(function(){
 					if ($(this).closest(".search_form").hasClass("advsearch_hide")) {
 						$(".adv_search_hidden").stop().slideDown();
 						$(this).html("Close Advanced Search");
@@ -280,22 +280,22 @@
 						$(".adv_search_hidden").stop().slideUp();
 						$(this).html("Advanced Search");
 					}
-					$(this).closest(".search_form").toggleClass("advsearch_hide");					
-				});				
-			});				
+					$(this).closest(".search_form").toggleClass("advsearch_hide");
+				});
+			});
 			</script>
 		</div>
 	</div>
-	
+
 	<div class="middle_row row_light_gray">
-		<div class="container clearfix">  
+		<div class="container clearfix">
 			<!-- week offer -->
             <div class="week_offer">
             	<h2>OFFER OF THE WEEK</h2>
                 <div class="offer_box">
 	                <div class="offer_image"><a href="offers-details.html"><img src="images/temp/week_offer.jpg" alt=""></a></div>
                     <div class="offer_text">
-                    	<h3><a href="offers-details.html">Ford Fiesta ST 3</a></h3>
+                    	<h3><a href="offers-details.html">Kia Picanto</a></h3>
                         <div class="offer_price">&pound;8,995</div>
                         <div class="offer_descr">
                         2013 3,575 miles, 1.6 turbo ecoboost engine, 182ps, Petrol, 47.9 combined mpg, Full Ford Service History, 3 Doors, Glacier white, Co2: 138g/km, Tax band E, Insurance Group 30E, 18" alloys, Leather seats, Bluetooth audio, CD/MP3 player, Isofix.
@@ -308,34 +308,34 @@
             <!-- special offer -->
             <div class="special_offers">
             	<h2>SPECIAL DEALS</h2>
-                
+
                 <div id="special_offers">
                 	<div class="special_item">
                     	<div class="special_image">
                     	<a href="offers-details.html"><img src="images/temp/special_offer_1.jpg" alt=""></a>
                         </div>
                         <div class="special_text">
-                        	<h3><a href="offers-details.html">Peugeot 206</a></h3>
+                        	<h3><a href="offers-details.html">Peugeot 107</a></h3>
                             <div class="info_row"><span>FIRST REG:</span> FEB 2005</div>
                             <div class="info_row"><span>ENGINE:</span> 1.4</div>
                             <div class="info_row"><span>MILEAGE</span> 82,000</div>
                             <div class="special_price"><span class="was">&pound;995</span>&pound;895</div>
                         </div>
                     </div>
-                    
+
                     <div class="special_item">
                     	<div class="special_image">
                     	<a href="offers-details.html"><img src="images/temp/special_offer_2.jpg" alt=""></a>
                         </div>
                         <div class="special_text">
-                        	<h3><a href="offers-details.html">Kia Picanto</a></h3>
+                        	<h3><a href="offers-details.html">Toyota Aygo</a></h3>
                             <div class="info_row"><span>FIRST REG:</span> JAN 2006</div>
                             <div class="info_row"><span>ENGINE:</span> 1.1</div>
                             <div class="info_row"><span>MILEAGE</span> 30,443</div>
                             <div class="special_price"><span class="was">&pound;1,850</span>&pound;1,245</div>
                         </div>
                     </div>
-                    
+
                     <div class="special_item">
                     	<div class="special_image">
                     	<a href="offers-details.html"><img src="images/temp/special_offer_3.jpg" alt=""></a>
@@ -348,40 +348,40 @@
                             <div class="special_price"><span class="was">&pound;5,450</span>&pound;4,995</div>
                         </div>
                     </div>
-                    
+
                     <div class="special_item">
                     	<div class="special_image">
                     	<a href="offers-details.html"><img src="images/temp/special_offer_4.jpg" alt=""></a>
                         </div>
                         <div class="special_text">
-                        	<h3><a href="offers-details.html">Fiat 500</a></h3>
+                        	<h3><a href="offers-details.html">Myvi</a></h3>
                             <div class="info_row"><span>FIRST REG:</span> FEB 2011</div>
                             <div class="info_row"><span>ENGINE:</span> 0.9</div>
                             <div class="info_row"><span>MILEAGE</span> 27,800</div>
                             <div class="special_price"><span class="was">&pound;4,850</span>&pound;4,595</div>
                         </div>
                     </div>
-                    
+
                     <div class="special_item">
                     	<div class="special_image">
                     	<a href="offers-details.html"><img src="images/temp/special_offer_5.jpg" alt=""></a>
                         </div>
                         <div class="special_text">
-                        	<h3><a href="offers-details.html">Citroen DS3</a></h3>
+                        	<h3><a href="offers-details.html">Renault Twingo</a></h3>
                             <div class="info_row"><span>FIRST REG:</span> MAR 2011</div>
                             <div class="info_row"><span>ENGINE:</span> 1.6</div>
                             <div class="info_row"><span>MILEAGE</span>90,000</div>
                             <div class="special_price"><span class="was">&pound;5,850</span>&pound;5,325</div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <a class="prev" id="special_offers_prev" href="#"></a>
             	<a class="next" id="special_offers_next" href="#"></a>
-                
-                <div class="link_more"><a href="#">View All Special Offers</a></div>
-            
-                <script>	
+
+                <div class="link_more"><a href="cars.php">View All Cars</a></div>
+
+                <script>
 				jQuery(document).ready(function($) {
 					function carSpecicalInit() {
 						var car_specical = $('#special_offers');
@@ -392,43 +392,43 @@
 							circular: false,
 							auto: false,
 							width: '100%',
-							direction: "down",						
+							direction: "down",
 							scroll: {
 								items : 1
 							}
-						});						
+						});
 					}
 					$(window).load(function() {
 						carSpecicalInit();
-					}); 
+					});
 					var resizeTimer;
 					$(window).resize(function() {
 						clearTimeout(resizeTimer);
 						resizeTimer = setTimeout(carSpecicalInit, 100);
-					});							          
+					});
 				});
-			    </script> 
-            </div>           
-            <!--/ special offer -->			
+			    </script>
+            </div>
+            <!--/ special offer -->
 		</div>
 	</div>
-	
 
-    
-	
-    
+
+
+
+
     <!-- testimonials -->
     <?php include ('components/testimonials.php'); ?>
     <!--/ testimonials -->
-    
+
     <!-- latest_offers -->
 	<div class="middle_row latest_offers">
-		<div class="container clearfix">         			
+		<div class="container clearfix">
         	<h2>LATEST CARS IN SHOWROOM</h2>
-                     
+
             <a href="#" class="link_more">View All Latest Added</a>
 		</div>
-            
+
         <div id="latest_offers">
             <div class="latest_item">
             <a href="offers-details.html"><img src="images/temp/prod_img_01.jpg" alt=""></a>
@@ -467,49 +467,49 @@
             <a href="offers-details.html">Seat Leon 1.6i</a>
             </div>
         </div>
-        
+
         <a class="prev" id="latest_offers_prev" href="#"></a>
         <a class="next" id="latest_offers_next" href="#"></a>
-                    
-        <script>	
-        jQuery(document).ready(function($) {	
+
+        <script>
+        jQuery(document).ready(function($) {
 			var screenRes = $(window).width();
-			
+
             $('#latest_offers').carouFredSel({
                 prev : "#latest_offers_prev",
-                next : "#latest_offers_next", 
+                next : "#latest_offers_next",
                 infinite: false,
                 circular: true,
                 auto: false,
-                width: '100%',				
+                width: '100%',
                 scroll: {
                     items : 1,
 					onBefore: function (data) {
 						if (screenRes > 900) {
 						data.items.visible.eq(0).animate({opacity: 0.15},300);
 						data.items.old.eq(-1).animate({opacity: 1},300);
-						data.items.visible.eq(-1).animate({opacity: 0.15},300);		               
+						data.items.visible.eq(-1).animate({opacity: 0.15},300);
 						}
 		            },
 					onAfter: function (data) {
 						if (screenRes > 900) {
-						data.items.old.eq(0).animate({opacity: 1},300);	
+						data.items.old.eq(0).animate({opacity: 1},300);
 						}
 		            }
                 }
-            });			
+            });
 			if (screenRes > 900) {
 				var vis_items = $("#latest_offers").triggerHandler("currentVisible");
 				vis_items.eq(-1).animate({opacity: 0.15},100);
 				vis_items.eq(0).animate({opacity: 0.15},100);
 			}
         });
-        </script>             
+        </script>
 	</div>
     <!--/ latest_offers -->
-    
+
     <?php include ('components/brands.php'); ?>
-    
+
 <!--/ middle -->
 
 <?php include ('components/footer.php'); ?>

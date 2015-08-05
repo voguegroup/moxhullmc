@@ -22,7 +22,7 @@
 
 <!-- main JS libs  -->
 <script src="js/libs/modernizr.min.js"></script>
-<script src="js/libs/respond.min.js"></script>					 
+<script src="js/libs/respond.min.js"></script>
 <script src="js/libs/jquery.min.js"></script>
 
 <!-- scripts  -->
@@ -47,14 +47,14 @@
 
 <body>
 <div class="body_wrap">
-	
+
 	<!-- header top bar -->
 	<?php include ('components/header.php'); ?>
 	<!--/ header top bar -->
-		
+
 <!-- header -->
 <div class="header header_map">
-            
+
 	<div id="header_map"></div>
 	<script>
 	    $(window).ready(function () {
@@ -84,21 +84,21 @@
 <!-- search -->
 	<div class="middle_row row_white search_row contact_form">
 		<div class="container">
-			
-            <!-- contact form -->               
+
+            <!-- contact form -->
             <form action="#" method="post" id="contactForm" class="clearfix ajax_form">
-                
+
                 <div class="form_col_1">
                     <div class="row alignleft field_text">
                         <label class="label_title">Name</label>
                         <input type="text" name="yourname" id="name" value="" class="inputField required">
                     </div>
-                                                          
+
                     <div class="row alignleft field_text omega">
                         <label class="label_title">Email</label>
                         <input type="text" name="email" id="email" value="" class="inputField required">
                     </div>
-                                       
+
                     <div class="row field_select alignleft">
                         <label class="label_title">Subject</label>
                         <select class="select_styled" name="subject" id="subject">
@@ -107,20 +107,20 @@
                             <option value="General">General</option>
                         </select>
                     </div>
-                    
+
                     <div class="row field_text alignleft omega">
                         <label class="label_title">Phone</label>
                         <input type="text" name="phone" id="phone" value="" class="inputField">
                     </div>
                 </div>
-                
-                <div class="form_col_2">                
+
+                <div class="form_col_2">
                     <div class="row">
                         <label class="label_title">Message:</label>
                         <textarea cols="30" rows="10" name="message" id="message" class="textareaField required"></textarea>
                     </div>
                 </div>
-                
+
                 <div class="form_col_3">
                     <a onclick="document.getElementById('contactForm').reset();return false" href="#" class="link-reset">Reset all fields</a>
                     <div class="row rowSubmit clearfix">
@@ -128,34 +128,34 @@
                     </div>
                 </div>
             </form>
-            <!--/ contact form --> 
+            <!--/ contact form -->
 		</div>
 	</div>
 <!--/ search -->
 
-<!-- middle -->   
+<!-- middle -->
 <div id="middle" class="cols2">
-	<div class="container clearfix">  
-    	
+	<div class="container clearfix">
+
 		<!-- content -->
         <div class="content">
-        	
+
             <div class="contact_box">
             	<h2>Contact us:</h2>
-                <div class="box_content clearfix">                	
+                <div class="box_content clearfix">
                 	<div class="left_side contact-address">
 	                	<div class="name"><strong>Moxhull Motor Company</strong></div>
 						<div class="address">Unit 1 Bricklyn Farm, Bulls Lane, Wishaw, B76 9QN</div>
-						
-                        <div class="row phone"><em>Phone:</em> <span>0121 351 3311</span></div>	                    
+
+                        <div class="row phone"><em>Phone:</em> <span>0121 351 3311</span></div>
 		                <div class="row mail"><em>Email:</em> <a href="mailto:>sales@moxhullmotorcompany.co.ukm">sales @ moxhullmotorcompany.co.uk</a></div>
 						<div class="social_inner"><a href="#" class="social-fb"><span>Facebook</span></a></div>
-                        
-                        
-										
-     					
-						
-                      
+
+
+
+
+
+
 					</div>
                     <div class="right_side">
 	                    <h3>How to find Moxhull Motor Company</h3>
@@ -168,42 +168,42 @@ Leave the M42 and Junction 9 onto Kingsbury Rd/A4097 signed for Minworth. Turn r
    <input type="hidden" name="daddr" value="Unit 1 Bricklyn Farm, Bulls Lane, Wishaw, B76 9QN" />
    <input type="submit" value="Get directions" />
 </form></p>
-                        
-                    </div> 
+
+                    </div>
                 </div>
             </div>
-            
+
         </div>
         <!--/ content -->
-        
+
         <!-- sidebar -->
         <div class="sidebar">
-			
+
             <!-- flickr widget -->
             <div class="contact_box">
                 <h2 >Opening Times</h2>
-                
-                <div class="box_content clearfix"> 
+
+                <div class="box_content clearfix">
                 <p>Mon-Fri: 9am-5.45pm</p>
                 <p>Sat: 9am-5pm</p><p>Sun: 11am-3pm</p>
-                <p>Viewings by appointments only</p>
+              <p>Out of hours mobile:07852 943777</p>
                 </div>
-                
-                
+
+
                 <h2 style="margin-top:20px" >Reviews</h2>
-                <div class="box_content clearfix"> 
+                <div class="box_content clearfix">
 				<script type="text/javascript">
 (function () {
 	var _tsid = 'X2BA4C5BBC628094D4016FE8ED5A2DE20';
 	_tsConfig = {
-                 /* custom, custom_reviews */		
+                 /* custom, custom_reviews */
                 'variant': 'custom_reviews',
 		'customElementId': 'X2BA4C5BBC628094D4016FE8ED5A2DE20',
 		/* Determine direction to open trustcard:
 		bottomLeft, bottomRight, topLeft, topRight*/
-		'trustcardDirection': 'topLeft', 
+		'trustcardDirection': 'topLeft',
 		/*adjust height within 40-90 pixel:*/
-		'customBadgeHeight' : '90' 
+		'customBadgeHeight' : '90'
 	};
 	var _ts = document.createElement('script');
 	_ts.type = 'text/javascript';
@@ -213,17 +213,17 @@ Leave the M42 and Junction 9 onto Kingsbury Rd/A4097 signed for Minworth. Turn r
 	__ts.parentNode.insertBefore(_ts, __ts);
  })();
  </script>
-                <span id="X2BA4C5BBC628094D4016FE8ED5A2DE20"></span>       
+                <span id="X2BA4C5BBC628094D4016FE8ED5A2DE20"></span>
                 </div>
             </div>
             <!--/ flickr widget -->
-            
+
         </div>
         <!--/ sidebar -->
         </div></div>
-        
+
         <?php include ('components/brands.php'); ?>
-    
+
 <!--/ middle -->
 
 <?php include ('components/footer.php'); ?>

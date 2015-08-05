@@ -1,8 +1,7 @@
 <?php session_start();
 
 	require_once('config/config.php');
-	require_once('components/mysql_connect.inc');
-
+	
 
 	/* ------------------------- Start of IP Based Security Checks ------------------------- */
 

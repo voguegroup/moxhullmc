@@ -22,18 +22,11 @@ $db = '589243_mox';
 $host = 'mysql51-011.wc2.dfw1.stabletransit.com';
 $port = 21;
 
-$link = mysqli_init();
-$success = mysqli_real_connect(
-   $link, 
-   $host, 
-   $user, 
-   $password, 
-   $db,
-   $port
-);
+try {
+$dbo = new PDO('mysql:host='.$host.';dbname='.$db, $user, $password);
+} catch (PDOException $e) {
+print "Error!: " . $e->getMessage() . "<br/>";
+die();
+}
 
-//$db_host = 'mysql51-011.wc2.dfw1.stabletransit.com'; // e.g. 'localhost'
-//$db_user = '589243_mox'; // MySQL username
-//$db_pass = 'TT9-SLQ-VtT-zkp'; // MySQL password
-//$db_name = '589243_mox'; // MySQL database name
 ?>

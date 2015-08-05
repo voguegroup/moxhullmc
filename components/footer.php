@@ -20,7 +20,7 @@ B76 9QN
         </div>
 
         <div class="copyright">
-        <img src="images/temp/hpi.png" width="43" height="43" alt="Experian car check approved"><img style="margin-left:20px" width="43" height="43" src="images/temp/warranty.png" alt="3 month warranty"><img style="margin-left:20px" width="43" height="43" src="images/temp/cards.png" alt="accepts most debit and credit cards"> 
+        <img src="images/temp/hpi.png" width="43" height="43" alt="Experian car check approved"><img style="margin-left:20px" width="43" height="43" src="images/temp/warranty.png" alt="3 month warranty"><img style="margin-left:20px" width="43" height="43" src="images/temp/cards.png" alt="accepts most debit and credit cards">
         </div>
 
 
@@ -28,7 +28,7 @@ B76 9QN
 
         <div class="footer_contacts">
 
-        	<span class="phone">0121 351 3311</span>
+        	<span class="phone">0121 351 3311&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;07852 943777 (Out of hours)</span>
             <span class="email">sales@moxhullmotorcompany.co.uk</span>
         </div>
 

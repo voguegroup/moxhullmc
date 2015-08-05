@@ -73,6 +73,7 @@ else {
 <meta name="keywords" content="" />
 <meta name="author" content="Vogue Creative" />
 <title>Vogue Creative CMS</title>
+<?php include($cms_root_url . '/components/meta.php'); ?>
 <link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $cms_abs_url ?>/css/home.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">

@@ -5,16 +5,16 @@ require_once('config/config.php');
 	/* ------------------------- Start of Login Attempts Function  ------------------------- */
 
 function recordLoginAttempt() {
-	
+global $dbo; // We have to declare this as a global function since it's wrapped in a function
 $sql=$dbo->prepare("INSERT INTO fsclog (uid, sesip, action, action_time) VALUES(:uid, :sesip, :action, :action_time)");
 $sql->execute(array(
 ":uid" => '0',
 ":sesip" => $_SERVER['REMOTE_ADDR'],
 ":action" =>	 'Attempted Login',
 ":action_time" => gmdate("Y-m-d H:i:s")
-));
+));	
+	
 
-			 
 	}
 
 	/* ------------------------- End of Login Attempts Function  ------------------------- */
@@ -40,7 +40,6 @@ $sql->execute(array(
 			if (!isset($erun)) {
 
 
-
 $query = $dbo->prepare("SELECT * FROM users WHERE email = :email AND password = :password AND status='L'");
 $query->bindParam(':email', $_POST['real_data_goes_here_1']);
 $query->bindParam(':password', md5($_POST['real_data_goes_here_2']));
@@ -53,7 +52,6 @@ if($total == 1){
 	$_SESSION['user'] = $row['first_name'] . ' ' . $row['last_name'];
 	$_SESSION['uid'] = $row['user_id'];
 	$_SESSION['priv'] = $row['user_type'];
-	
 	
 	//Update the Users table with the last login IP and date.
 	
@@ -72,13 +70,14 @@ $sql->execute(array(
 ":action" =>	 'User '. $_SESSION['user'] .' Login',
 ":action_time" => gmdate("Y-m-d H:i:s")
 ));
-					// Redirect the user to the dashboard (home.php).
-					header('Location: home.php');
-					exit();
-    }
-    
 
-				// If a match was NOT made...
+// Redirect the user to the dashboard (home.php).
+
+header('Location: home.php');
+exit();
+    }
+	
+    			// If a match was NOT made...
 				else {
 					$erun = "Incorrect email/password combination.";
 					recordLoginAttempt();
@@ -87,9 +86,10 @@ $sql->execute(array(
 			}
 
 		}
+		
+		/* ------------------------- End of No Errors  ------------------------- */
 
 	
-	else {
 
 		/* ------------------------- Start of Logout/Timeout Handling  ------------------------- */
 
@@ -105,49 +105,44 @@ $sql->execute(array(
 
 		/* ------------------------- End of Logout/Timeout Handling  ------------------------- */
 
-	}
+	
 
 
 	/* ------------------------- Start of Login Attempts Handling  ------------------------- */
 
-	//$sql=$dbo->prepare("SELECT * FROM fsclog WHERE (UNIX_TIMESTAMP(action_time) > UNIX_TIMESTAMP(NOW())-3660) AND sesip='%s' ORDER BY action_time DESC",
-		//	 mysql_real_escape_string($_SERVER['REMOTE_ADDR']));
+$query=$dbo->prepare("SELECT * FROM fsclog WHERE (UNIX_TIMESTAMP(action_time) > UNIX_TIMESTAMP(NOW())-3660) AND sesip= :sesip ORDER BY action_time DESC");
+$query->bindParam(':sesip', $_SERVER['REMOTE_ADDR']);
+$query->execute();
+	
+$login_attempts = 0;
 
-	//$sql->execute();
-							
+	while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+	if ($row['action'] == "Attempted Login") {
+	$login_attempts++;
+	}
+	else {
+	break;
+	}
+	}
+	
 
-	//$login_attempts = 0;
-
-	//while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-		//if ($row['action'] == "Attempted Login") {
-			//$login_attempts++;
-		//}
-	//	else {
-			//break;
-		//}
-//	}
-
-//	if ($login_attempts >= 3 ) {
-	//	echo '<h1>You have exceeded the maximum number (3) of login attempts!</h1>';
-		//exit;
-	// }
+if ($login_attempts >= 3 ) {
+	echo '<h1>You have exceeded the maximum number (3) of login attempts!</h1>';
+	exit;
+	}
 
 	/* ------------------------- End of Login Attempts Handling  ------------------------- */
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+?><!DOCTYPE html>
+<html dir="ltr" class="ltr" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>BlueWave Content Management System by Digital Arts</title>
-<script language="JavaScript" type="text/javascript">
-<!-- Begin
-function popUp(URL) {
-day = new Date();
-id = day.getTime();
-eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300,left = 390,top = 200');");
-}
-// End -->
-</script>
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+<meta name="viewport" content="width=device-width">
+<meta charset="UTF-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="Vogue Creative" />
+<title>Vogue Creative CMS</title>
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 </head>
 <body <?php if ($erun) { echo "onload=\"alert('$erun')\""; } ?>>
@@ -178,7 +173,6 @@ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,lo
 
             </form>
 
-			<br /><br /><a href="javascript:popUp('password-help.php')">Help, i've forgotten my password!</a>
 
 		</div>
 

@@ -1,6 +1,6 @@
 <?php session_start();
 
-include(dirname(__FILE__) . '/../config/config.php');
+include('../config/config.php');
 
 if (!$_SESSION['uid']) {
 header ("Location:$cms_abs_url/index.php");
@@ -12,16 +12,16 @@ $HTTP_SESSION_VARS['S'] = 'ranges';
 include($cms_root_url . '/components/menu-script.php');
 include($cms_root_url . '/components/log-script.php');
 
-// Include DB Connection.
-require($cms_root_url . '/components/mysql_connect.inc');
+
 
 if ($_GET['delete']) {
 	
-	$query = "DELETE FROM ranges WHERE range_id=" . mysql_real_escape_string($_GET['delete']);
+	$query=$dbo->prepare("DELETE FROM ranges WHERE range_id= :delete");
+$query->bindParam(':delete', $_GET['delete']);
+$query->execute();
 	
-	$result = mysql_query($query);
 	
-	if ($result) {
+	if ($query) {
 		$erun = 'Range Deleted';
 		$srun = $erun;
 		include($cms_root_url . '/components/log-script.php');
@@ -63,14 +63,16 @@ else {
 	$order_by_query = "ORDER BY manufacturer_name ASC, range_name ASC";	
 }
 
-?>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+?><!DOCTYPE html>
+<html dir="ltr" class="ltr" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<?php include($cms_root_url . '/components/meta.php'); ?>
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+<meta name="viewport" content="width=device-width">
+<meta charset="UTF-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="Vogue Creative" />
+<title>Vogue Creative CMS</title>
 <link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
@@ -79,7 +81,7 @@ function deleteAlert(id) {
 }
 
 function deleteYes(id) {
-	location.href='ranges-view.php?delete='+id;
+	location.href='car-view.php?delete='+id;
 }
 
 function deleteNo() {
@@ -125,7 +127,7 @@ function deleteNo() {
                     <p>Add, edit and delete product ranges.</p>
                 </div>
             
-            	<a class="button" href="ranges-add.php">Create New Range</a><div class="clear"></div><br />
+            	<a class="button" href="car-add.php">Create New Range</a><div class="clear"></div><br />
             
                 <?php
             

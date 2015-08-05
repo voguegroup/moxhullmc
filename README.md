@@ -12,3 +12,4 @@ hello@voguecreative.co.uk
 
 # Updates
 05.08.2015: Code wrapped within a function in PDO has to have the global $ defined
+05.08.2015: AS using branch for front pages

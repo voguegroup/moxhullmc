@@ -9,3 +9,6 @@ Includes jslider
 Includes shtheme
 
 hello@voguecreative.co.uk
+
+# Updates
+05.07.2015: Code wrapped within a function in PDO has to have the global $ defined

@@ -19,8 +19,7 @@ $cms_root_url = "/mnt/stor12-wc2-dfw1/589243/moxhullmc.wearefundamental.com/web/
 $user = '589243_mox';
 $password = 'TT9-SLQ-VtT-zkp';
 $db = '589243_mox';
-$host = 'mysql51-011.wc2.dfw1.stabletransit.com';
-$port = 21;
+$host = '72.3.204.197';
 
 try {
 $dbo = new PDO('mysql:host='.$host.';dbname='.$db, $user, $password);
@@ -28,5 +27,7 @@ $dbo = new PDO('mysql:host='.$host.';dbname='.$db, $user, $password);
 print "Error!: " . $e->getMessage() . "<br/>";
 die();
 }
-
+if($dbo){
+  //echo "<p>connection successful!</p>";
+}
 ?>

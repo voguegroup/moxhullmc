@@ -13,7 +13,23 @@ include('../components/menu-script.php');
 include('../components/log-script.php');
 
 
-if ($_POST['submitted']) {
+if (isset($_POST['submitted'])) {
+	
+	if (empty($_POST['Make'])) {
+		$erun = "Please enter the Make";
+	}
+	
+	if (!$erun && empty($_POST['Model'])) {
+		$erun = "Please enter the Model";
+	}
+	
+	if (!$erun && empty($_POST['Price'])) {
+		$erun = "Please enter the Price";
+	}
+	
+	if (!$erun) {
+
+	
 	$query = $dbo->prepare("INSERT INTO stock (Feed_ID,
   Vehicle_ID,
   FullRegistration,
@@ -95,7 +111,7 @@ if ($_POST['submitted']) {
 ":Mileage" => '0',
 ":BodyType" => '0',
 ":Doors" => '0',
-":Make" => '0',
+":Make" => $_POST['Make'],
 ":Model" => '0',
 ":Variant" => '0',
 ":EngineSize" => '0',
@@ -133,7 +149,7 @@ if ($_POST['submitted']) {
 		
 	}
 		
-		
+	}
 
 } 
 
@@ -224,10 +240,10 @@ Enter the Number of Doors *Number only<br />
 <input type="text" name="range_name" size="1" maxlength="1" value=""  /><br /><br />
 
 Enter the Make<br />
-<input type="text" name="range_name" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
+<input type="text" name="Make" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
 
 Enter the Model<br />
-<input type="text" name="range_name" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
+<input type="text" name="Model" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
 
 Enter the Variant<br />
 <input type="text" name="range_name" size="75" maxlength="75" value=""  /><br /><br />
@@ -236,7 +252,7 @@ Enter the Engine Size *Number only<br />
 <input type="text" name="range_name" size="4" maxlength="4" value=""  /><br /><br />
 
 Enter the Price (&pound;) *Number only - Do not include &pound; sign, commas or decimal places<br />
-<input type="text" name="range_name" size="10" maxlength="10" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
+<input type="text" name="Price" size="10" maxlength="10" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
 
 Enter the Transmission<br />
 <select name="Transmission">

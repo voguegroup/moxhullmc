@@ -8,7 +8,7 @@ header ("Location:$cms_abs_url/index.php");
 
 /* Generate Menus */
 $HTTP_SESSION_VARS['T'] = 'data';
-$HTTP_SESSION_VARS['S'] = 'ranges';
+$HTTP_SESSION_VARS['S'] = 'car';
 include('../components/menu-script.php');
 include('../components/log-script.php');
 
@@ -30,42 +30,44 @@ if (isset($_POST['submitted'])) {
 	if (!$erun) {
 
 	
-	$query = $dbo->prepare("INSERT INTO stock (Feed_ID,
-  Vehicle_ID,
-  FullRegistration,
-  Colour,
-  FuelType,
-  Year,
-  Mileage,
-  BodyType,
-  Doors,
-  Make,
-  Model,
-  Variant,
-  EngineSize,
-  Price,
-  Transmission,
-  PictureRefs,
-  ServiceHistory,
-  PreviousOwners,
-  Category,
-  FourWheelDrive,
-  Options,
-  Comments,
-  New,
-  Used,
-  Site,
-  Origin,
-  V5,
-  Condition,
-  ExDemo,
-  FranchiseApproved,
-  TradePrice,
-  TradePriceExtra,
-  ServiceHistoryText,
-  Capid,
-  Attention_Grabber) 
-						 VALUES (:Feed_ID,
+	$query = $dbo->prepare("INSERT INTO stock (`Feed_ID`,
+  `Vehicle_ID`,
+  `FullRegistration`,
+  `Colour`,
+  `FuelType`,
+  `Year`,
+  `Mileage`,
+  `BodyType`,
+  `Doors`,
+  `Make`,
+  `Model`,
+  `Variant`,
+  `EngineSize`,
+  `Price`,
+  `Transmission`,
+  `PictureRefs`,
+  `ServiceHistory`,
+  `PreviousOwners`,
+  `Category`,
+  `FourWheelDrive`,
+  `Options`,
+  `Comments`,
+  `New`,
+  `Used`,
+  `Site`,
+  `Origin`,
+  `V5`,
+  `Condition`,
+  `ExDemo`,
+  `FranchiseApproved`,
+  `TradePrice`,
+  `TradePriceExtra`,
+  `ServiceHistoryText`,
+  `Capid`,
+  `Attention_Grabber`) 
+  
+  					 VALUES (:Feed_ID,
+  
   :Vehicle_ID,
   :FullRegistration,
   :Colour,
@@ -103,40 +105,40 @@ if (isset($_POST['submitted'])) {
   
   $query->execute(array(
 ":Feed_ID" => '0', //change to Al's ID
-":Vehicle_ID" => '0',
-":FullRegistration" => '0',
-":Colour" => '0',
-":FuelType" => '0',
-":Year" => '0',
-":Mileage" => '0',
-":BodyType" => '0',
-":Doors" => '0',
+":Vehicle_ID" => $_POST['Vehicle_ID'],
+":FullRegistration" => $_POST['FullRegistration'],
+":Colour" => $_POST['Colour'],
+":FuelType" => $_POST['FuelType'],
+":Year" => $_POST['Year'],
+":Mileage" => $_POST['Mileage'],
+":BodyType" => $_POST['BodyType'],
+":Doors" => $_POST['Doors'],
 ":Make" => $_POST['Make'],
-":Model" => '0',
-":Variant" => '0',
-":EngineSize" => '0',
-":Price" => '0',
-":Transmission" => '0',
-":PictureRefs" => '0',
-":ServiceHistory" => '0',
-":PreviousOwners" => '0',
-":Category" => '0',
-":FourWheelDrive" => '0',
-":Options" => '0',
-":Comments" => '0',
-":New" => '0',
-":Used" => '0',
-":Site" => '0',
-":Origin" => '0',
-":V5" => '0',
-":Condition" => '0',
-":ExDemo" => '0',
-":FranchiseApproved" => '0',
-":TradePrice" => '0',
-":TradePriceExtra" => '0',
-":ServiceHistoryText" => '0',
-":Capid" => '0',
-":Attention_Grabber" => '0' )); 
+":Model" => $_POST['Model'],
+":Variant" => $_POST['Variant'],
+":EngineSize" => $_POST['EngineSize'],
+":Price" => $_POST['Price'],
+":Transmission" => $_POST['Transmission'],
+":PictureRefs" => $_POST['image1'] . ',' . $_POST['image2'] . ',' . $_POST['image3'] . ',' . $_POST['image4'] ,
+":ServiceHistory" => $_POST['ServiceHistory'],
+":PreviousOwners" => $_POST['PreviousOwners'],
+":Category" => $_POST['Category'],
+":FourWheelDrive" => $_POST['FourWheelDrive'],
+":Options" => $_POST['Options'],
+":Comments" => $_POST['Comments'],
+":New" => $_POST['New'],
+":Used" => $_POST['Used'],
+":Site" => $_POST['Site'],
+":Origin" => $_POST['Origin'],
+":V5" => $_POST['V5'],
+":Condition" => $_POST['Condition'],
+":ExDemo" => $_POST['ExDemo'],
+":FranchiseApproved" => $_POST['FranchiseApproved'],
+":TradePrice" => $_POST['TradePrice'],
+":TradePriceExtra" => $_POST['TradePriceExtra'],
+":ServiceHistoryText" => $_POST['ServiceHistoryText'],
+":Capid" => $_POST['Capid'],
+":Attention_Grabber" => $_POST['Attention_Grabber'] )); 
 	
 	if($query) {
 			$erun = 'Vehicle Created';
@@ -144,7 +146,7 @@ if (isset($_POST['submitted'])) {
 			include('../components/log-script.php');
 	 } else {
 		 
-		 	$erun = 'Error, Range NOT Created ' . $query->errorCode();
+		 	$erun = 'Error, Vehicle NOT Created ' . $query->errorCode();
 	
 		
 	}
@@ -197,8 +199,8 @@ if (isset($_POST['submitted'])) {
 			<div id="page-pad">
 				
                 <div id="page-pad-title">
-                    <h1>Add Range</h1>
-                    <p>Create a new range.</p>
+                    <h1>Add Car</h1>
+                    <p>Create a new car.</p>
                 </div>
                 
                 <p><strong>Please Note:</strong> fields marked <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /> are required!</p>
@@ -207,13 +209,13 @@ if (isset($_POST['submitted'])) {
 
 
 Enter the Unique Vehicle ID<br />
-<input type="text" name="range_name" size="50" maxlength="50" value="" /><br /><br />
+<input type="text" name="Vehicle_ID" size="50" maxlength="50" value="" /><br /><br />
 
 Enter the Full Registration<br />
-<input type="text" name="range_name" size="20" maxlength="20" value="" /><br /><br />
+<input type="text" name="FullRegistration" size="20" maxlength="20" value="" /><br /><br />
 
 Enter the Colour<br />
-<input type="text" name="range_name" size="60" maxlength="60" value="" /><br /><br />
+<input type="text" name="Colour" size="60" maxlength="60" value="" /><br /><br />
 
 Enter the Fuel Type<br />
 <select name="FuelType">
@@ -228,16 +230,16 @@ Enter the Fuel Type<br />
 </select><br /><br />
 
 Enter the Year<br />
-<input type="text" name="range_name" size="4" maxlength="4" value=""  /><br /><br />
+<input type="text" name="Year" size="4" maxlength="4" value=""  /><br /><br />
 
 Enter the Mileage *Number only<br />
-<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
+<input type="text" name="Mileage" size="10" maxlength="10" value=""  /><br /><br />
 
 Enter the Body Type *No Doors Info<br />
-<input type="text" name="range_name" size="30" maxlength="30" value=""  /><br /><br />
+<input type="text" name="BodyType" size="30" maxlength="30" value=""  /><br /><br />
 
 Enter the Number of Doors *Number only<br />
-<input type="text" name="range_name" size="1" maxlength="1" value=""  /><br /><br />
+<input type="text" name="Doors" size="1" maxlength="1" value=""  /><br /><br />
 
 Enter the Make<br />
 <input type="text" name="Make" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
@@ -246,10 +248,10 @@ Enter the Model<br />
 <input type="text" name="Model" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
 
 Enter the Variant<br />
-<input type="text" name="range_name" size="75" maxlength="75" value=""  /><br /><br />
+<input type="text" name="Variant" size="75" maxlength="75" value=""  /><br /><br />
 
 Enter the Engine Size *Number only<br />
-<input type="text" name="range_name" size="4" maxlength="4" value=""  /><br /><br />
+<input type="text" name="EngineSize" size="4" maxlength="4" value=""  /><br /><br />
 
 Enter the Price (&pound;) *Number only - Do not include &pound; sign, commas or decimal places<br />
 <input type="text" name="Price" size="10" maxlength="10" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
@@ -279,7 +281,7 @@ Service History?<br />
 </select><br /><br />
 
 Enter the Number Previous Owners *Number only<br />
-<input type="text" name="range_name" size="1" maxlength="1" value="1"  /><br /><br />
+<input type="text" name="PreviousOwners" size="1" maxlength="1" value="1"  /><br /><br />
 
 Enter the Category<br />
 <select name="Category">
@@ -333,7 +335,7 @@ Does the vehicle have a V5 document?<br />
 </select><br /><br />
 
 Enter the Condition of the Vehicle<br />
-<input type="text" name="range_name" size="100" maxlength="100" value=""  /><br /><br />
+<input type="text" name="Condition" size="100" maxlength="100" value=""  /><br /><br />
 
 Is the vehicle ex-demo?<br />
 <select name="ExDemo">
@@ -348,10 +350,10 @@ Is the vehicle Franchise Approved?<br />
 </select><br /><br />
 
 Price for the Traderlink site *Number only - Do not include &pound; sign, commas or decimal places<br />
-<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
+<input type="text" name="TradePrice" size="10" maxlength="10" value=""  /><br /><br />
 
 Extra price text (Traderlink site only)<br />
-<input type="text" name="range_name" size="20" maxlength="20" value=""  /><br /><br />
+<input type="text" name="TradePriceExtra" size="20" maxlength="20" value=""  /><br /><br />
 
 Service History<br />
 <select name="ServiceHistoryText">
@@ -362,7 +364,7 @@ Service History<br />
 </select><br /><br />
 
 Enter the CAP ID *Number only<br />
-<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
+<input type="text" name="Capid" size="10" maxlength="10" value=""  /><br /><br />
 
 Enter the unique selling point of that vehicle in the title to really grab buyers attention to make sure they click to find out more about your car.<br />
 <textarea name="Attention_Grabber" maxlength="30"></textarea>

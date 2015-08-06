@@ -9,12 +9,11 @@ header ("Location:$cms_abs_url/index.php");
 /* Generate Menus */
 $HTTP_SESSION_VARS['T'] = 'data';
 $HTTP_SESSION_VARS['S'] = 'ranges';
-include($cms_root_url . '/components/menu-script.php');
-include($cms_root_url . '/components/log-script.php');
+include('../components/menu-script.php');
+include('../components/log-script.php');
 
 
 if ($_POST['submitted']) {
-
 	$query = $dbo->prepare("INSERT INTO stock (Feed_ID,
   Vehicle_ID,
   FullRegistration,
@@ -126,7 +125,7 @@ if ($_POST['submitted']) {
 	if($query) {
 			$erun = 'Vehicle Created';
 			$srun = "Vehicle &quot;" . $_POST['Make'] . "&quot; Created";
-			include($cms_root_url . '/components/log-script.php');
+			include('../components/log-script.php');
 	 } else {
 		 
 		 	$erun = 'Error, Range NOT Created ' . $query->errorCode();
@@ -148,7 +147,7 @@ if ($_POST['submitted']) {
 <meta name="keywords" content="" />
 <meta name="author" content="Vogue Creative" />
 <title>Vogue Creative CMS</title>
-<?php include($cms_root_url . '/components/meta.php'); ?>
+<?php include('../components/meta.php'); ?>
 <link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
 <script language='JavaScript' src='../ScriptLibrary/incPureUpload.js' type="text/javascript"></script>
 </head>
@@ -157,7 +156,7 @@ if ($_POST['submitted']) {
 
 <div id="header">
 	<div class="container">
-		<?php include($cms_root_url . '/components/header.php'); ?>
+		<?php include('../components/header.php'); ?>
 	</div>
 </div>
 
@@ -366,7 +365,7 @@ Enter the unique selling point of that vehicle in the title to really grab buyer
 
 
 <div id="footer">
-	<?php include($cms_root_url . '/components/footer.php'); ?>
+	<?php include('../components/footer.php'); ?>
 </div>
 
 </body>

@@ -9,8 +9,9 @@ header ("Location:$cms_abs_url/index.php");
 /* Generate Menus */
 $HTTP_SESSION_VARS['T'] = 'data';
 $HTTP_SESSION_VARS['S'] = 'menu';
-include($cms_root_url . '/components/menu-script.php');
-include($cms_root_url . '/components/log-script.php');
+include('../components/menu-script.php');
+include('../components/log-script.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ include($cms_root_url . '/components/log-script.php');
 <meta name="keywords" content="" />
 <meta name="author" content="Vogue Creative" />
 <title>Vogue Creative CMS</title>
-<?php include($cms_root_url . '/components/meta.php'); ?>
+<?php include('../components/meta.php'); ?>
 <link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $cms_abs_url ?>/css/home.css" rel="stylesheet" type="text/css" />
 </head>
@@ -32,11 +33,11 @@ include($cms_root_url . '/components/log-script.php');
 
 <div id="header">
 	<div class="container">
-		<?php include($cms_root_url . '/components/header.php'); ?>
+		<?php include('../components/header.php'); ?>
 	</div>
 </div>
 
-<?php include($cms_root_url . '/components/page-menu.php'); ?>
+<?php include('../components/page-menu.php'); ?>
 
 <div id="page-text">
 	<div class="container">
@@ -75,7 +76,7 @@ include($cms_root_url . '/components/log-script.php');
 </div>
 
 <div id="footer">
-		<?php include($cms_root_url . '/components/footer.php'); ?>
+		<?php include('../components/footer.php'); ?>
 </div>
 </body>
 </html>

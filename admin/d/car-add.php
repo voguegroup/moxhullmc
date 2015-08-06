@@ -20,14 +20,7 @@ require($cms_root_url . '/components/mysql_connect.inc');
 if ($_POST['submitted']) {
 	
 	
-	$updated_room_array = '|';
-	$query = "SELECT * FROM rooms ORDER BY room_name ASC";
-	$result = mysql_query($query);
-	while($row = mysql_fetch_assoc($result)) {
-		if (isset($_POST['room' . $row['room_id']])) {
-			$updated_room_array .= $row['room_id'] . '|';
-		}
-	}
+	
 	
 	
 	// Validation	
@@ -164,10 +157,7 @@ if ($_POST['submitted']) {
 
 } 
 
-?>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -213,136 +203,168 @@ if ($_POST['submitted']) {
                 
 <form action="" method="post">
 
-Select a Manufacturer<br />
-<select name="manufacturer_id" size="1">
-	<option value="">-- Select --</option>
-	<?php
-		$query = "SELECT * FROM manufacturers ORDER BY manufacturer_name ASC";
-		$result = mysql_query($query);
-		while($row = mysql_fetch_assoc($result)) {
-			echo '<option value="' . $row['manufacturer_id'] . '"';
-			if ($_POST['manufacturer_id'] == $row['manufacturer_id']) {
-				echo ' selected="selected"';	
-			}
-			echo '>' . $row['manufacturer_name'] . '</option>';	
-		}
-	?>
-</select>
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
-			
-Enter a Range Name<br />
-<input type="text" name="range_name" size="80" maxlength="200" value="<?php echo stripslashes($_POST['range_name']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
 
-Is This Range Made from British Wool?<br />
-<input type="radio" name="range_british_wool" value="Y" <?php if ($_POST['range_british_wool'] == 'Y') { echo 'checked="checked"'; } ?> />Yes<br />
-<input type="radio" name="range_british_wool" value="N" <?php if (!isset($_POST['range_british_wool']) || $_POST['range_british_wool'] == 'N') { echo 'checked="checked"'; } ?> />No<br /><br />
+Enter the Unique Vehicle ID<br />
+<input type="text" name="range_name" size="50" maxlength="50" value="" /><br /><br />
 
-Is This A WOW Product?<br />
-<input type="radio" name="range_wow" value="Y" <?php if ($_POST['range_wow'] == 'Y') { echo 'checked="checked"'; } ?> />Yes<br />
-<input type="radio" name="range_wow" value="N" <?php if (!isset($_POST['range_wow']) || $_POST['range_wow'] == 'N') { echo 'checked="checked"'; } ?> />No<br /><br />
+Enter the Full Registration<br />
+<input type="text" name="range_name" size="20" maxlength="20" value="" /><br /><br />
 
+Enter the Colour<br />
+<input type="text" name="range_name" size="60" maxlength="60" value="" /><br /><br />
 
-Is This A Pet and Family Product?<br />
-<input type="radio" name="range_pet" value="Y" <?php if ($_POST['range_pet'] == 'Y') { echo 'checked="checked"'; } ?> />Yes<br />
-<input type="radio" name="range_pet" value="N" <?php if (!isset($_POST['range_pet']) || $_POST['range_pet'] == 'N') { echo 'checked="checked"'; } ?> />No<br /><br />
+Enter the Fuel Type<br />
+<select name="FuelType">
+<option value="Bi Fuel">Bi Fuel</option>
+<option value="Diesel">Diesel</option>
+<option value="Dual Fuel">Dual Fuel</option>
+<option value="Electric">Electric</option>
+<option value="Hybrid">Hybrid</option>
+<option value="LPG">LPG</option>
+<option value="LPG G3">LPG G3</option>
+<option value="Petrol" selected="selected">Petrol</option>
+</select><br /><br />
 
+Enter the Year<br />
+<input type="text" name="range_name" size="4" maxlength="4" value=""  /><br /><br />
 
+Enter the Mileage *Number only<br />
+<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
 
-Select a Suitability<br />
-<select name="pile_id" size="1">
-	<option value="">-- Select --</option>
-	<?php
-		$query = "SELECT * FROM piles ORDER BY pile_name ASC";
-		$result = mysql_query($query);
-		while($row = mysql_fetch_assoc($result)) {
-			echo '<option value="' . $row['pile_id'] . '"';
-			if ($_POST['pile_id'] == $row['pile_id']) {
-				echo ' selected="selected"';	
-			}
-			echo '>' . $row['pile_name'] . '</option>';	
-		}
-	?>
-</select>
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Enter the Body Type *No Doors Info<br />
+<input type="text" name="range_name" size="30" maxlength="30" value=""  /><br /><br />
 
-Enter a Pile Weight<br />
-<input type="text" name="range_pile_weight" size="40" maxlength="200" value="<?php echo stripslashes($_POST['range_pile_weight']); ?>" /><br /><br />
+Enter the Number of Doors *Number only<br />
+<input type="text" name="range_name" size="1" maxlength="1" value=""  /><br /><br />
 
-Select a Width<br />
-<select name="range_width" size="1">
-	<option value="2m, 3m or 4m">2m, 3m or 4m</option>
-	<option value="2m">2m</option>
-	<option value="3m">3m</option>
-	<option value="4m">4m</option>
-    <option value="4m, 5m" <?php if ($_POST['range_width'] == '4m, 5m') { echo 'selected="selected"'; } ?>>4m, 5m</option>
-    <option value="5m">5m</option>
-    <option value="Tiles: Standard Box">Tiles: Standard Box</option>
-</select>
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Enter the Make<br />
+<input type="text" name="range_name" size="50" maxlength="50" value=""  /><br /><br />
 
-Enter a Style<br />
-<input type="text" name="range_style" size="80" maxlength="200" value="<?php echo stripslashes($_POST['range_style']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Enter the Model<br />
+<input type="text" name="range_name" size="50" maxlength="50" value=""  /><br /><br />
 
-Enter a Backing<br />
-<input type="text" name="range_backing" size="80" maxlength="200" value="<?php echo stripslashes($_POST['range_backing']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Enter the Variant<br />
+<input type="text" name="range_name" size="75" maxlength="75" value=""  /><br /><br />
 
-Select the Range Type<br />
-<select name="range_type" size="1">
-	<option value="">-- Select --</option>
-	<option value="Domestic" <?php if ($_POST['range_type'] == 'Domestic') { echo 'selected="selected"'; } ?>>Domestic</option>
-    <option value="Heavy Domestic" <?php if ($_POST['range_type'] == 'Heavy Domestic') { echo 'selected="selected"'; } ?>>Heavy Domestic</option>
-    <option value="Extra Heavy Domestic" <?php if ($_POST['range_type'] == 'Extra Heavy Domestic') { echo 'selected="selected"'; } ?>>Extra Heavy Domestic</option>
-    <option value="Commercial" <?php if ($_POST['range_type'] == 'Commercial') { echo 'selected="selected"'; } ?>>Commercial</option>
-    <option value="Heavy Commercial" <?php if ($_POST['range_type'] == 'Heavy Commercial') { echo 'selected="selected"'; } ?>>Heavy Commercial</option>
-    <option value="Extra Heavy Commercial" <?php if ($_POST['range_type'] == 'Extra Heavy Commercial') { echo 'selected="selected"'; } ?>>Extra Heavy Commercial</option>
-</select>
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Enter the Engine Size *Number only<br />
+<input type="text" name="range_name" size="4" maxlength="4" value=""  /><br /><br />
 
-Select Where This Range Will be Used <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br />
-<?php
-	$query = "SELECT * FROM rooms ORDER BY room_name ASC";
-	$result = mysql_query($query);
-	while($row = mysql_fetch_assoc($result)) {
-		echo '<input type="checkbox" name="room' . $row['room_id'] . '"';
-		if (isset($_POST['room' . $row['room_id']])) {
-			echo ' checked="checked"';	
-		}
-		echo ' /> ' . $row['room_name'] . '<br />';	
-	}
-?>
-<br />
+Enter the Price (&pound;) *Number only - Do not include &pound; sign, commas or decimal places<br />
+<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
 
-Enter Warranty Details<br />
-<input type="text" name="range_warranty" size="80" maxlength="200" value="<?php echo stripslashes($_POST['range_warranty']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Enter the Transmission<br />
+<select name="Transmission">
+<option value="Manual" selected="selected">Manual</option>
+<option value="Automatic">Automatic</option>
+</select><br /><br />
 
-Enter Half Roll Price<br />
-&pound;<input type="text" name="range_half_roll_price" size="6" maxlength="6" value="<?php echo stripslashes($_POST['range_half_roll_price']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Upload Image 1<br />
+<input type="file" name="image1" /><br /><br />
 
-Enter Full Roll Price<br />
-&pound;<input type="text" name="range_roll_price" size="6" maxlength="6" value="<?php echo stripslashes($_POST['range_roll_price']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Upload Image 2<br />
+<input type="file" name="image2" /><br /><br />
 
-Enter Cut Price<br />
-&pound;<input type="text" name="range_cut_price" size="6" maxlength="6" value="<?php echo stripslashes($_POST['range_cut_price']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Upload Image 3<br />
+<input type="file" name="image3" /><br /><br />
 
-Enter Resell Price<br />
-&pound;<input type="text" name="range_resell_price" size="6" maxlength="6" value="<?php echo stripslashes($_POST['range_resell_price']); ?>" />
-<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+Upload Image 4<br />
+<input type="file" name="image4" /><br /><br />
 
-Is This Range on Sale?<br />
-<input type="checkbox" name="range_on_sale" <?php if (isset($_POST['range_on_sale'])) { echo 'checked="checked"'; } ?> />
+Service History?<br />
+<select name="ServiceHistory">
+<option value="1" selected="selected">Yes</option>
+<option value="0">No</option>
+</select><br /><br />
+
+Enter the Number Previous Owners *Number only<br />
+<input type="text" name="range_name" size="1" maxlength="1" value="1"  /><br /><br />
+
+Enter the Category<br />
+<select name="Category">
+<option value="CARS" selected="selected">Cars</option>
+<option value="BIKE">Bike</option>
+<option value="COMM">Comm</option>
+</select><br /><br />
+
+Four Wheel Drive?<br />
+<select name="FourWheelDrive">
+<option value="1" selected="selected">Yes</option>
+<option value="0">No</option>
+</select><br /><br />
+
+Options - List format seperated by commas<br />
+<textarea name="Options" maxlength="1000">Anti-Lock Brakes,Alarm,Alloy Wheels,Automatic Gearbox,Sony CD,Central Locking</textarea><br /><br />
+
+Comments - Any additional text such as Price excludes VAT etc (this field must not contain any data that appears already in the advert).<br />
+<textarea name="Comments" maxlength="1500"></textarea><br /><br />
+
+New?<br />
+<select name="New">
+<option value="Y" >Yes</option>
+<option value="N" selected="selected">No</option>
+</select><br /><br />
+
+Used?<br />
+<select name="Used">
+<option value="Y" selected="selected">Yes</option>
+<option value="N" >No</option>
+</select><br /><br />
+
+Site?<br />
+<select name="Site">
+<option value="C" >Consumer</option>
+<option value="T" >Traderlink</option>
+<option value="B" selected="selected" >Both</option>
+</select><br /><br />
+
+Origin?<br />
+<select name="Origin">
+<option value="UK" selected="selected">UK</option>
+<option value="Parallel Import" >Parallel Import</option>
+<option value="grey Import" >Grey Import</option>
+</select><br /><br />
+
+Does the vehicle have a V5 document?<br />
+<select name="V5">
+<option value="Y" selected="selected">Yes</option>
+<option value="N" >No</option>
+</select><br /><br />
+
+Enter the Condition of the Vehicle<br />
+<input type="text" name="range_name" size="100" maxlength="100" value=""  /><br /><br />
+
+Is the vehicle ex-demo?<br />
+<select name="ExDemo">
+<option value="Y" >Yes</option>
+<option value="N" selected="selected">No</option>
+</select><br /><br />
+
+Is the vehicle Franchise Approved?<br />
+<select name="FranchiseApproved">
+<option value="Y" >Yes</option>
+<option value="N" selected="selected">No</option>
+</select><br /><br />
+
+Price for the Traderlink site *Number only - Do not include &pound; sign, commas or decimal places<br />
+<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
+
+Extra price text (Traderlink site only)<br />
+<input type="text" name="range_name" size="20" maxlength="20" value=""  /><br /><br />
+
+Service History<br />
+<select name="ServiceHistoryText">
+<option value="Full service history" selected="selected">Full service history</option>
+<option value="Full dealership history" >Full dealership history</option>
+<option value="Service History" >Service history</option>
+<option value="Part service history" >Part service history</option>
+</select><br /><br />
+
+Enter the CAP ID *Number only<br />
+<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
+
+Enter the unique selling point of that vehicle in the title to really grab buyers attention to make sure they click to find out more about your car.<br />
+<textarea name="Attention_Grabber" maxlength="30"></textarea>
 <br /><br />
-
-Percentage Discount When on Sale<br />
-<input type="text" name="range_sale_discount" size="3" maxlength="3" value="<?php echo stripslashes($_POST['range_sale_discount']); ?>" />%
-<br /><br />
-
 
 <input name="submitted" type="hidden" value="TRUE" />
 <input name="submit" type="submit" value="Save Range" />

@@ -16,7 +16,39 @@ include('../components/log-script.php');
 
 $id = $_GET['id'];
 
+require_once('../ScriptLibrary/incPureUpload.php');
+// Pure PHP Upload 2.1.8
+$ppu = new pureFileUpload();
+$ppu->path = "../../images/uploads"; //change when uploaded
+$ppu->extensions = "JPG,JPEG,PNG";
+$ppu->formName = "addform";
+$ppu->storeType = "file";
+$ppu->sizeLimit = "";
+$ppu->nameConflict = "uniq";
+$ppu->requireUpload = "true";
+$ppu->minWidth = "";
+$ppu->minHeight = "";
+$ppu->maxWidth = "";
+$ppu->maxHeight = "";
+$ppu->saveWidth = "";
+$ppu->saveHeight = "";
+$ppu->timeout = "600";
+$ppu->progressBar = "fileCopyProgress.htm";
+$ppu->progressWidth = "300";
+$ppu->progressHeight = "100";
+$ppu->redirectURL = "";
+$ppu->checkVersion("2.1.8");
+$ppu->doUpload();
 
+if (isset($editFormAction)) {
+  if (isset($_SERVER['QUERY_STRING'])) {
+	  if (!eregi("GP_upload=true", $_SERVER['QUERY_STRING'])) {
+  	  $editFormAction .= "&GP_upload=true";
+		}
+  } else {
+    $editFormAction .= "?GP_upload=true";
+  }
+}
 
 if (isset($_POST['submitted'])) {
 	
@@ -85,7 +117,7 @@ if (isset($_POST['submitted'])) {
 ":EngineSize" => $_POST['EngineSize'],
 ":Price" => $_POST['Price'],
 ":Transmission" => $_POST['Transmission'],
-":PictureRefs" => $_FILES['image1'] . ',' . $_FILES['image2'] . ',' . $_FILES['image3'] . ',' . $_FILES['image4'] ,
+":PictureRefs" => $_FILES['image1']['name'] . ',' . $_FILES['image2']['name'] . ',' . $_FILES['image3']['name'] . ',' . $_FILES['image4']['name'] ,
 ":PreviousOwners" => $_POST['PreviousOwners'],
 ":Category" => $_POST['Category'],
 ":FourWheelDrive" => $_POST['FourWheelDrive'],
@@ -115,7 +147,21 @@ if (isset($_POST['submitted'])) {
 		
 	}
 		
-	}
+	} else if ($_GET['delete_image']) {
+		
+		$query = $dbo->prepare("UPDATE stock SET PictureRefs=',,,' WHERE id= :id");
+		
+		$query->bindParam(':id', $id);
+		$query->execute();
+			
+		if ($query) {
+			$erun = 'All Images Deleted';
+		} 
+		else {
+			$erun = 'Error, Images NOT Deleted';
+		}	
+		
+	}	
 
 } 
 
@@ -159,9 +205,12 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
   
   
   $PictureRefs= $row['PictureRefs'];
+  $images = explode(",", $PictureRefs);
   
 
 }
+
+
 
 ?><!DOCTYPE html>
 <html dir="ltr" class="ltr" lang="en">
@@ -272,18 +321,51 @@ Enter the Transmission<br />
 <option value="Automatic">Automatic</option>
 </select><br /><br />
 
+<?php if (empty($images[0])) { ?>
 Upload Image 1<br />
-<input type="file" name="image1" /><br /><br />
+<input name="image1" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
+<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+<?php } else { ?>
+Current Image<br />
+<img src="../../images/uploads/<?php echo $images[0]; ?>" alt="" /><br />
+<input type="hidden" name="image1" value="<?php echo $images[0]; ?>" />
 
+<?php } ?>
+
+<?php if (empty($images[1])) { ?>
 Upload Image 2<br />
-<input type="file" name="image2" /><br /><br />
+<input name="image2" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
+<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+<?php } else { ?>
+Current Image<br />
+<img src="../../images/uploads/<?php echo $images[1]; ?>" alt="" /><br />
+<input type="hidden" name="image2" value="<?php echo $images[1]; ?>" />
 
+<?php } ?>
+
+<?php if (empty($images[2])) { ?>
 Upload Image 3<br />
-<input type="file" name="image3" /><br /><br />
+<input name="image3" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
+<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+<?php } else { ?>
+Current Image<br />
+<img src="../../images/uploads/<?php echo $images[2]; ?>" alt="" /><br />
+<input type="hidden" name="image3" value="<?php echo $images[2]; ?>" />
 
+<?php } ?>
+
+<?php if (empty($images[3])) { ?>
 Upload Image 4<br />
-<input type="file" name="image4" /><br /><br />
+<input name="image4" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
+<img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
+<?php } else { ?>
+Current Image<br />
+<img src="../../images/uploads/<?php echo $images[3]; ?>" alt="" /><br />
+<input type="hidden" name="image4" value="<?php echo $images[3]; ?>" />
 
+<?php } ?>
+
+<a href="car-edit.php?id=<?php echo $id; ?>&amp;delete_image=true">Delete current images and upload new ones</a><br /><br />
 Enter the Number Previous Owners *Number only<br />
 <input type="text" name="PreviousOwners" size="1" maxlength="1" value="<?php echo $PreviousOwners; ?>" /><br /><br />
 

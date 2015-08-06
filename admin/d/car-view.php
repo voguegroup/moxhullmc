@@ -114,6 +114,7 @@ function deleteNo() {
 							echo '<td align="left" valign="top"><strong>Model</strong></td>';
 							echo '<td align="left" valign="top"><strong>Year</strong></td>';
 							echo '<td align="left" valign="top"><strong>Price</strong></td>';
+							echo '<td align="left" valign="top"><strong>Images</strong></td>';
 							echo '<td align="left" valign="top"><strong>Delete</strong></td>';
 						echo '</tr>';
                     
@@ -136,6 +137,13 @@ function deleteNo() {
 							
 							
 							echo '<td align=\"left\" valign=\"middle\">&pound;' . $row['Price'] . '</td>';
+							
+							$PictureRefs= $row['PictureRefs'];
+  $images = explode(",", $PictureRefs);
+  
+  
+  echo '<td align=\"left\" valign=\"middle\"><img src="../../images/uploads/'.$images[0].'" width="50" height="50"><img src="../../images/uploads/'.$images[1].'" width="50" height="50"><img src="../../images/uploads/'.$images[2].'" width="50" height="50"><img src="../../images/uploads/'.$images[3].'" width="50" height="50"></td>';
+  
 							
 							echo '<td align=\"left\" valign=\"middle\"><a onclick="deleteAlert(' . $row['id'] . ')" class="button" >Delete</a></td>';
 							

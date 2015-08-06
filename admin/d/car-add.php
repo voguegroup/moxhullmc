@@ -12,6 +12,39 @@ $HTTP_SESSION_VARS['S'] = 'car';
 include('../components/menu-script.php');
 include('../components/log-script.php');
 
+require_once('../ScriptLibrary/incPureUpload.php');
+// Pure PHP Upload 2.1.8
+$ppu = new pureFileUpload();
+$ppu->path = "../../images/uploads"; //change when uploaded
+$ppu->extensions = "JPG,JPEG,PNG";
+$ppu->formName = "addform";
+$ppu->storeType = "file";
+$ppu->sizeLimit = "";
+$ppu->nameConflict = "uniq";
+$ppu->requireUpload = "true";
+$ppu->minWidth = "";
+$ppu->minHeight = "";
+$ppu->maxWidth = "";
+$ppu->maxHeight = "";
+$ppu->saveWidth = "";
+$ppu->saveHeight = "";
+$ppu->timeout = "600";
+$ppu->progressBar = "fileCopyProgress.htm";
+$ppu->progressWidth = "300";
+$ppu->progressHeight = "100";
+$ppu->redirectURL = "";
+$ppu->checkVersion("2.1.8");
+$ppu->doUpload();
+
+if (isset($editFormAction)) {
+  if (isset($_SERVER['QUERY_STRING'])) {
+	  if (!eregi("GP_upload=true", $_SERVER['QUERY_STRING'])) {
+  	  $editFormAction .= "&GP_upload=true";
+		}
+  } else {
+    $editFormAction .= "?GP_upload=true";
+  }
+}
 
 if (isset($_POST['submitted'])) {
 	
@@ -29,7 +62,6 @@ if (isset($_POST['submitted'])) {
 	
 	if (!$erun) {
 
-	
 	$query = $dbo->prepare("INSERT INTO stock (`Feed_ID`,
   `Vehicle_ID`,
   `FullRegistration`,
@@ -119,7 +151,7 @@ if (isset($_POST['submitted'])) {
 ":EngineSize" => $_POST['EngineSize'],
 ":Price" => $_POST['Price'],
 ":Transmission" => $_POST['Transmission'],
-":PictureRefs" => $_FILES['image1'] . ',' . $_FILES['image2'] . ',' . $_FILES['image3'] . ',' . $_FILES['image4'] ,
+":PictureRefs" => $_FILES['image1']['name'] . ',' . $_FILES['image2']['name'] . ',' . $_FILES['image3']['name'] . ',' . $_FILES['image4']['name'] ,
 ":ServiceHistory" => $_POST['ServiceHistory'],
 ":PreviousOwners" => $_POST['PreviousOwners'],
 ":Category" => $_POST['Category'],
@@ -166,7 +198,7 @@ if (isset($_POST['submitted'])) {
 <meta name="author" content="Vogue Creative" />
 <title>Vogue Creative CMS</title>
 <?php include('../components/meta.php'); ?>
-<link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
+<link href="../css/page.css" rel="stylesheet" type="text/css" />
 <script language='JavaScript' src='../ScriptLibrary/incPureUpload.js' type="text/javascript"></script>
 </head>
 
@@ -205,8 +237,7 @@ if (isset($_POST['submitted'])) {
                 
                 <p><strong>Please Note:</strong> fields marked <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /> are required!</p>
                 
-<form action="" method="post" enctype="multipart/form-data">
-
+<form action="<?php echo $GP_uploadAction; ?>" method="post" enctype="multipart/form-data" name="addform" onsubmit="checkFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','');showProgressWindow('fileCopyProgress.htm',300,100);return document.MM_returnValue">
 
 Enter the Unique Vehicle ID<br />
 <input type="text" name="Vehicle_ID" size="50" maxlength="50" value="" /><br /><br />
@@ -263,16 +294,16 @@ Enter the Transmission<br />
 </select><br /><br />
 
 Upload Image 1<br />
-<input type="file" name="image1" /><br /><br />
+<input name="image1" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" /><br /><br />
 
 Upload Image 2<br />
-<input type="file" name="image2" /><br /><br />
+<input name="image2" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" /><br /><br />
 
 Upload Image 3<br />
-<input type="file" name="image3" /><br /><br />
+<input name="image3" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" /><br /><br />
 
 Upload Image 4<br />
-<input type="file" name="image4" /><br /><br />
+<input name="image4" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" /><br /><br />
 
 Service History?<br />
 <select name="ServiceHistory">

@@ -25,8 +25,8 @@ include('../components/log-script.php');
 <meta name="author" content="Vogue Creative" />
 <title>Vogue Creative CMS</title>
 <?php include('../components/meta.php'); ?>
-<link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $cms_abs_url ?>/css/home.css" rel="stylesheet" type="text/css" />
+<link href="../css/page.css" rel="stylesheet" type="text/css" />
+<link href="../css/home.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

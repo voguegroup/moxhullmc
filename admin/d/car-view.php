@@ -22,12 +22,12 @@ $query->execute();
 	
 	
 	if ($query) {
-		$erun = 'Range Deleted';
+		$erun = 'Car Deleted';
 		$srun = $erun;
 		include($cms_root_url . '/components/log-script.php');
 	} 
 	else {
-		$erun = 'Error, Range NOT Deleted';
+		$erun = 'Error, Car NOT Deleted';
 	}
 	
 }
@@ -48,7 +48,7 @@ $query->execute();
 <link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 function deleteAlert(id) {
-	document.getElementById('delete_alert').innerHTML = '<div id="error_message_bg"></div><div id="error_message"><p>Do you really want to delete this range?<br /><br /><input type="button" value="Yes" onclick="deleteYes('+id+')" />&nbsp;&nbsp;&nbsp;<input type="button" value="No" onclick="deleteNo()" /></p></div>';
+	document.getElementById('delete_alert').innerHTML = '<div id="error_message_bg"></div><div id="error_message"><p>Do you really want to delete this Car?<br /><br /><input type="button" value="Yes" onclick="deleteYes('+id+')" />&nbsp;&nbsp;&nbsp;<input type="button" value="No" onclick="deleteNo()" /></p></div>';
 }
 
 function deleteYes(id) {
@@ -114,6 +114,7 @@ function deleteNo() {
 							echo '<td align="left" valign="top"><strong>Model</strong></td>';
 							echo '<td align="left" valign="top"><strong>Year</strong></td>';
 							echo '<td align="left" valign="top"><strong>Price</strong></td>';
+							echo '<td align="left" valign="top"><strong>Delete</strong></td>';
 						echo '</tr>';
                     
                     while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -135,6 +136,8 @@ function deleteNo() {
 							
 							
 							echo '<td align=\"left\" valign=\"middle\">&pound;' . $row['Price'] . '</td>';
+							
+							echo '<td align=\"left\" valign=\"middle\"><a onclick="deleteAlert(' . $row['id'] . ')" class="button" >Delete</a></td>';
 							
 						
 							

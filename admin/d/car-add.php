@@ -1,6 +1,6 @@
 <?php session_start();
 
-include(dirname(__FILE__) . '/../config/config.php');
+include('../config/config.php');
 
 if (!$_SESSION['uid']) {
 header ("Location:$cms_abs_url/index.php");
@@ -13,154 +13,141 @@ include($cms_root_url . '/components/menu-script.php');
 include($cms_root_url . '/components/log-script.php');
 
 
-// Include DB Connection.
-require($cms_root_url . '/components/mysql_connect.inc');
-
-
 if ($_POST['submitted']) {
+
+	$query = $dbo->prepare("INSERT INTO stock (Feed_ID,
+  Vehicle_ID,
+  FullRegistration,
+  Colour,
+  FuelType,
+  Year,
+  Mileage,
+  BodyType,
+  Doors,
+  Make,
+  Model,
+  Variant,
+  EngineSize,
+  Price,
+  Transmission,
+  PictureRefs,
+  ServiceHistory,
+  PreviousOwners,
+  Category,
+  FourWheelDrive,
+  Options,
+  Comments,
+  New,
+  Used,
+  Site,
+  Origin,
+  V5,
+  Condition,
+  ExDemo,
+  FranchiseApproved,
+  TradePrice,
+  TradePriceExtra,
+  ServiceHistoryText,
+  Capid,
+  Attention_Grabber) 
+						 VALUES (:Feed_ID,
+  :Vehicle_ID,
+  :FullRegistration,
+  :Colour,
+  :FuelType,
+  :Year,
+  :Mileage,
+  :BodyType,
+  :Doors,
+  :Make,
+  :Model,
+  :Variant,
+  :EngineSize,
+  :Price,
+  :Transmission,
+  :PictureRefs,
+  :ServiceHistory,
+  :PreviousOwners,
+  :Category,
+  :FourWheelDrive,
+  :Options,
+  :Comments,
+  :New,
+  :Used,
+  :Site,
+  :Origin,
+  :V5,
+  :Condition,
+  :ExDemo,
+  :FranchiseApproved,
+  :TradePrice,
+  :TradePriceExtra,
+  :ServiceHistoryText,
+  :Capid,
+  :Attention_Grabber)");
+  
+  $query->execute(array(
+":Feed_ID" => '0', //change to Al's ID
+":Vehicle_ID" => '0',
+":FullRegistration" => '0',
+":Colour" => '0',
+":FuelType" => '0',
+":Year" => '0',
+":Mileage" => '0',
+":BodyType" => '0',
+":Doors" => '0',
+":Make" => '0',
+":Model" => '0',
+":Variant" => '0',
+":EngineSize" => '0',
+":Price" => '0',
+":Transmission" => '0',
+":PictureRefs" => '0',
+":ServiceHistory" => '0',
+":PreviousOwners" => '0',
+":Category" => '0',
+":FourWheelDrive" => '0',
+":Options" => '0',
+":Comments" => '0',
+":New" => '0',
+":Used" => '0',
+":Site" => '0',
+":Origin" => '0',
+":V5" => '0',
+":Condition" => '0',
+":ExDemo" => '0',
+":FranchiseApproved" => '0',
+":TradePrice" => '0',
+":TradePriceExtra" => '0',
+":ServiceHistoryText" => '0',
+":Capid" => '0',
+":Attention_Grabber" => '0' )); 
 	
-	
-	
-	
-	
-	// Validation	
-	if (!$erun && empty($_POST['manufacturer_id'])) {
-		$erun = "Please select a manufacturer";
-	}
-	
-	if (!$erun && empty($_POST['range_name'])) {
-		$erun = "Please enter a range name";
-	}
-	
-	if (!$erun && empty($_POST['pile_id'])) {
-		$erun = "Please select a pile content";
-	}
-	
-	if (!$erun && empty($_POST['range_width'])) {
-		$erun = "Please select a width";
-	}
-	
-	if (!$erun && empty($_POST['range_style'])) {
-		$erun = "Please enter some information about the style";
-	}
-	
-	if (!$erun && empty($_POST['range_backing'])) {
-		$erun = "Please enter some information about the backing";
-	}
-	
-	if (!$erun && empty($_POST['range_type'])) {
-		$erun = "Please select the range type";
-	}
-	
-	if (!$erun && (strlen($updated_room_array) == 1)) {
-		$erun = "Please select where this range will be used";
-	}
-	
-	if (!$erun && empty($_POST['range_warranty'])) {
-		$erun = "Please enter some information about the warranty";
-	}
-	
-	if (!$erun && !is_numeric($_POST['range_half_roll_price'])) {
-		$erun = "Please enter a half roll price";
-	}
-	
-	if (!$erun && !is_numeric($_POST['range_roll_price'])) {
-		$erun = "Please enter a full roll price";
-	}
-	
-	if (!$erun && !is_numeric($_POST['range_cut_price'])) {
-		$erun = "Please enter a cut price";
-	}
-	
-	if (!$erun && !is_numeric($_POST['range_resell_price'])) {
-		$erun = "Please enter a resell price";
-	}
-	
-	if (isset($_POST['range_on_sale'])) {
-		$range_on_sale = 'Y';	
-	}
-	else {
-		$range_on_sale = 'N';
-	}
-	
-	
-	if (!$erun) {
-		$query = sprintf("INSERT INTO ranges (manufacturer_id, 
-											  range_name, 
-											  range_british_wool, 
-											  range_wow, 
-											  range_pet, 
-											  pile_id,
-											  range_pile_weight,
-											  range_width,
-											  range_style,
-											  range_backing,
-											  range_type,
-											  room_id,
-											  range_warranty,
-											  range_half_roll_price,
-											  range_roll_price,
-											  range_cut_price,
-											  range_resell_price,
-											  range_on_sale,
-											  range_sale_discount) 
-						 VALUES ('%s', 
-								 '%s', 
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s', 
-								 '%s', 
-								 '%s', 
-								 '%s', 
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s',
-								 '%s')",
-		mysql_real_escape_string($_POST['manufacturer_id']),
-		mysql_real_escape_string(stripslashes($_POST['range_name'])),
-		mysql_real_escape_string($_POST['range_british_wool']),
-		mysql_real_escape_string($_POST['range_wow']),
-		mysql_real_escape_string($_POST['range_pet']),
-		mysql_real_escape_string($_POST['pile_id']),
-		mysql_real_escape_string(stripslashes($_POST['range_pile_weight'])),
-		mysql_real_escape_string($_POST['range_width']),
-		mysql_real_escape_string(stripslashes($_POST['range_style'])),
-		mysql_real_escape_string(stripslashes($_POST['range_backing'])),
-		mysql_real_escape_string($_POST['range_type']),
-		mysql_real_escape_string($updated_room_array),
-		mysql_real_escape_string(stripslashes($_POST['range_warranty'])),
-		mysql_real_escape_string($_POST['range_half_roll_price']),
-		mysql_real_escape_string($_POST['range_roll_price']),
-		mysql_real_escape_string($_POST['range_cut_price']),
-		mysql_real_escape_string($_POST['range_resell_price']),
-		mysql_real_escape_string($range_on_sale),
-		mysql_real_escape_string(stripslashes($_POST['range_sale_discount'])));
-	
-		$result = mysql_query($query);
-		
-		if ($result) {
-			$erun = 'Range Created';
-			$srun = "Range &quot;" . mysql_real_escape_string(stripslashes($_POST['range_name'])) . "&quot; Created";
+	if($query) {
+			$erun = 'Vehicle Created';
+			$srun = "Vehicle &quot;" . $_POST['Make'] . "&quot; Created";
 			include($cms_root_url . '/components/log-script.php');
-		} 
-		else {
-			$erun = 'Error, Range NOT Created';
-		}
+	 } else {
+		 
+		 	$erun = 'Error, Range NOT Created ' . $query->errorCode();
+	
+		
 	}
+		
+		
 
 } 
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+?><!DOCTYPE html>
+<html dir="ltr" class="ltr" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+<meta name="viewport" content="width=device-width">
+<meta charset="UTF-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="Vogue Creative" />
+<title>Vogue Creative CMS</title>
 <?php include($cms_root_url . '/components/meta.php'); ?>
 <link href="<?php echo $cms_abs_url ?>/css/page.css" rel="stylesheet" type="text/css" />
 <script language='JavaScript' src='../ScriptLibrary/incPureUpload.js' type="text/javascript"></script>
@@ -174,7 +161,7 @@ if ($_POST['submitted']) {
 	</div>
 </div>
 
-<?php require('../components/page-menu.php'); ?>
+<?php include('../components/page-menu.php'); ?>
 
 <div id="page-text">
 	<div class="container">
@@ -201,7 +188,7 @@ if ($_POST['submitted']) {
                 
                 <p><strong>Please Note:</strong> fields marked <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /> are required!</p>
                 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 
 
 Enter the Unique Vehicle ID<br />
@@ -238,10 +225,10 @@ Enter the Number of Doors *Number only<br />
 <input type="text" name="range_name" size="1" maxlength="1" value=""  /><br /><br />
 
 Enter the Make<br />
-<input type="text" name="range_name" size="50" maxlength="50" value=""  /><br /><br />
+<input type="text" name="range_name" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
 
 Enter the Model<br />
-<input type="text" name="range_name" size="50" maxlength="50" value=""  /><br /><br />
+<input type="text" name="range_name" size="50" maxlength="50" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
 
 Enter the Variant<br />
 <input type="text" name="range_name" size="75" maxlength="75" value=""  /><br /><br />
@@ -250,7 +237,7 @@ Enter the Engine Size *Number only<br />
 <input type="text" name="range_name" size="4" maxlength="4" value=""  /><br /><br />
 
 Enter the Price (&pound;) *Number only - Do not include &pound; sign, commas or decimal places<br />
-<input type="text" name="range_name" size="10" maxlength="10" value=""  /><br /><br />
+<input type="text" name="range_name" size="10" maxlength="10" value=""  /><img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /><br /><br />
 
 Enter the Transmission<br />
 <select name="Transmission">

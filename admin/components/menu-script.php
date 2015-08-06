@@ -25,7 +25,7 @@ $topmenu .= '<li><a href="' . $base . $url . '" id="current">' . $title . '</a><
 				
 				
 				$surl = 'd/car-view.php'; $stitle = 'Cars';
-				if ($s == 'ranges') {
+				if ($s == 'car') {
 				$submenu .= '<li><a href="' . $base . $surl . '" id="pagecurrent">' . $stitle . '</a></li>';
 				} else {
 				$submenu .= '<li><a href="' . $base . $surl . '">' . $stitle . '</a></li>';

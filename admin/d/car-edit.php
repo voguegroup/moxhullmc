@@ -66,11 +66,11 @@ if (isset($_POST['submitted'])) {
   `FranchiseApproved`=:FranchiseApproved,
   `TradePrice`=:TradePrice,
   `TradePriceExtra`=:TradePriceExtra,
-  `Capid`=: Capid
+  `Capid`=:Capid
    WHERE `id`=:id");
    
    $query->execute(array(
-":id" => $_POST['id'],
+":id" => $id,
 ":Vehicle_ID" => $_POST['Vehicle_ID'],
 ":FullRegistration" => $_POST['FullRegistration'],
 ":Colour" => $_POST['Colour'],
@@ -85,7 +85,7 @@ if (isset($_POST['submitted'])) {
 ":EngineSize" => $_POST['EngineSize'],
 ":Price" => $_POST['Price'],
 ":Transmission" => $_POST['Transmission'],
-":PictureRefs" => $_FILES['image1'] . ',' . $_FILES['image2'] . ',' . $_FILES['image3'] . ',' . $_FILES['image4'],
+":PictureRefs" => $_FILES['image1'] . ',' . $_FILES['image2'] . ',' . $_FILES['image3'] . ',' . $_FILES['image4'] ,
 ":PreviousOwners" => $_POST['PreviousOwners'],
 ":Category" => $_POST['Category'],
 ":FourWheelDrive" => $_POST['FourWheelDrive'],
@@ -102,7 +102,8 @@ if (isset($_POST['submitted'])) {
 ":TradePrice" => $_POST['TradePrice'],
 ":TradePriceExtra" => $_POST['TradePriceExtra'],
 ":Capid" => $_POST['Capid'] )); 
-		
+
+	
 		if($query) {
 			$erun = 'Vehicle Saved';
 			$srun = "Vehicle &quot;" . $_POST['Make'] . "&quot; Saved";
@@ -206,8 +207,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 			<div id="page-pad">
 				
                 <div id="page-pad-title">
-                    <h1>Edit Range</h1>
-                    <p>Modify an existing range.</p>
+                    <h1>Edit Car</h1>
+                    <p>Modify an existing Car.</p>
                 </div>
                 
                 <p><strong>Please Note:</strong> fields marked <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" align="middle" /> are required!</p>

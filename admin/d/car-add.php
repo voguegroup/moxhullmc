@@ -119,7 +119,7 @@ if (isset($_POST['submitted'])) {
 ":EngineSize" => $_POST['EngineSize'],
 ":Price" => $_POST['Price'],
 ":Transmission" => $_POST['Transmission'],
-":PictureRefs" => $_POST['image1'] . ',' . $_POST['image2'] . ',' . $_POST['image3'] . ',' . $_POST['image4'] ,
+":PictureRefs" => $_FILES['image1'] . ',' . $_FILES['image2'] . ',' . $_FILES['image3'] . ',' . $_FILES['image4'] ,
 ":ServiceHistory" => $_POST['ServiceHistory'],
 ":PreviousOwners" => $_POST['PreviousOwners'],
 ":Category" => $_POST['Category'],
@@ -371,7 +371,7 @@ Enter the unique selling point of that vehicle in the title to really grab buyer
 <br /><br />
 
 <input name="submitted" type="hidden" value="TRUE" />
-<input name="submit" type="submit" value="Save Range" />
+<input name="submit" type="submit" value="Save Car" />
 
 </form>	         
 

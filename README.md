@@ -7,6 +7,7 @@ Includes rs-plugin
 Includes prettyPhoto
 Includes jslider
 Includes shtheme
+Includes incPureUpload.js
 
 hello@voguecreative.co.uk
 

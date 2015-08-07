@@ -62,7 +62,7 @@ if (isset($_POST['submitted'])) {
 	
 	if (!$erun) {
 		
-		$dir = 'http://moxhullmc.wearefundamental.com/images/uploads/';
+		$dir = 'http://moxhullmotorcompany.co.uk/images/uploads/';
 
 	$query = $dbo->prepare("INSERT INTO stock (`Feed_ID`,
   `Vehicle_ID`,

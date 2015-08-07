@@ -65,7 +65,7 @@ if (isset($_POST['submitted'])) {
 		$erun = "Please enter the Price";
 	}
 	
-	$dir = 'http://moxhullmc.wearefundamental.com/images/uploads/';
+	$dir = 'http://moxhullmotorcompany.co.uk/images/uploads/';
 
 	
 	if (!$erun) {

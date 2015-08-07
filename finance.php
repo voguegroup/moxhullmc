@@ -278,11 +278,11 @@ if ($_POST) {
                 <div class="form_col_1">
                     <div class="row alignleft field_text">
                         <label class="label_title">Cash price (&pound;)</label>
-                        <input type="text" name="yourname" id="name" value="" class="inputField required" placeholder="1000">
+                        <input type="text" name="cashprice" id="name" value="" class="inputField required" placeholder="1000">
                     </div> 
                     <div class="row alignleft field_text omega">
                         <label class="label_title">Deposit (&pound;)</label>
-                        <input type="text" name="email" id="email" value="" class="inputField required" placeholder="300">
+                        <input type="text" name="deposit" id="email" value="" class="inputField required" placeholder="300">
                     </div>  
                    
                     </div>   
@@ -298,8 +298,7 @@ if ($_POST) {
                         </select>
                     </div> 
                     <div class="row alignleft field_text omega">
-                        <label class="label_title">Interest rate (&#37;)</label>
-                        <div class="row rowSubmit clearfix">
+                      <div class="row rowSubmit clearfix">
                         <input type="submit" value="Calculate Finance" id="send" class="btn btn-submit">
                     </div>
                     </div>   

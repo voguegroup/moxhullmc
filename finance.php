@@ -307,7 +307,7 @@ if ($_POST) {
              </form>  
              <?php if (isset($total)) { ?>
              
-             <?php echo $total; ?>
+             <?php echo '&pound;' . round($total,2); ?>
              
              <?php } ?>  
              <p><small>* Above calculations are for illustration purposes only. Rates based on individual circumstance. Finance subject to documentation and completion fees.</small></p>

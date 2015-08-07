@@ -1,4 +1,18 @@
-<!doctype html>
+<?php 
+if ($_POST['cashprice']) {
+	$cashprice=$_POST['cashprice'];
+}
+if ($_POST['deposit']) {
+	$deposit=$_POST['deposit'];
+}
+if ($_POST['length']) {
+	$length=$_POST['length'];
+}
+if ($_POST) {
+	
+	$total = ($cashprice - $deposit) * $length / 0.05;
+}
+?><!doctype html>
 <!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
@@ -259,7 +273,7 @@
            <p>At Moxhull Motor Company Sutton Coldfield, we are able to provide the right finance package to suit your requirements - it's a key factor in choosing the right car to fit your budget.</p>
            <p>We're able to offer competitive finance options that match your circumstances.</p>
            <h3>Calculate your finance payments</h3>
-           <form action="#" method="post" id="contactForm" class="clearfix ajax_form">
+           <form action="" method="post" id="contactForm" class=>
                 
                 <div class="form_col_1">
                     <div class="row alignleft field_text">
@@ -285,13 +299,17 @@
                     </div> 
                     <div class="row alignleft field_text omega">
                         <label class="label_title">Interest rate (&#37;)</label>
-                        <input type="text" name="email" id="email" value="" class="inputField required" placeholder="5">
                         <div class="row rowSubmit clearfix">
                         <input type="submit" value="Calculate Finance" id="send" class="btn btn-submit">
                     </div>
                     </div>   
                     </div>
-             </form>    
+             </form>  
+             <?php if (isset($total)) { ?>
+             
+             <?php echo $total; ?>
+             
+             <?php } ?>  
              <p><small>* Above calculations are for illustration purposes only. Rates based on individual circumstance. Finance subject to documentation and completion fees.</small></p>
              
               <div class="text_box">

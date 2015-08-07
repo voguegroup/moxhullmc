@@ -11,7 +11,7 @@ if ($_POST['length']) {
 if ($_POST) {
 	
 	$gross = ($cashprice - $deposit) / $length;
-	$total = $gross / 0.05;
+	$total = $gross * 0.05;
 }
 ?><!doctype html>
 <!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
@@ -307,7 +307,7 @@ if ($_POST) {
              </form>  
              <?php if (isset($total)) { ?>
              
-             <?php echo '&pound;' . round($total,2); ?>
+             <?php echo '&pound;' . round($gross,2); ?>
              
              <?php } ?>  
              <p><small>* Above calculations are for illustration purposes only. Rates based on individual circumstance. Finance subject to documentation and completion fees.</small></p>

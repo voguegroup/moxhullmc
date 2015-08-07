@@ -73,6 +73,7 @@ class pureFileUpload
     $fileName = $file->getFileName();
     $fileName = substr($fileName, strrpos($fileName, ':'));
     $fileName = preg_replace("/\s+|;|\+|=|\[|\]|'|,|\\|\"|\*|<|>|\/|\?|\:|\|/i", "_", $fileName);
+	
     $this->debug("new filename = <font color=\"#000099\"><b>".$fileName."</b></font><br/>");
     $file->setFileName($fileName);
   }
@@ -351,6 +352,8 @@ class pureFileUpload
         } else {
           // If filename does not exist
           $this->moveFile($_FILES[$field]['tmp_name'], $this->path.'/'.$file->fileName);
+		  
+		 
         }
         
         // Check the imagesize
@@ -494,6 +497,7 @@ class fileInfo
   }
   
   function getFileName() {
+	  
     return $this->fileName;
   }
 

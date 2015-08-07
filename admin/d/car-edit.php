@@ -65,6 +65,8 @@ if (isset($_POST['submitted'])) {
 		$erun = "Please enter the Price";
 	}
 	
+	$dir = 'http://moxhullmc.wearefundamental.com/images/uploads/';
+
 	
 	if (!$erun) {
 		$query = $dbo->prepare("UPDATE stock SET
@@ -117,7 +119,7 @@ if (isset($_POST['submitted'])) {
 ":EngineSize" => $_POST['EngineSize'],
 ":Price" => $_POST['Price'],
 ":Transmission" => $_POST['Transmission'],
-":PictureRefs" => $_FILES['image1']['name'] . ',' . $_FILES['image2']['name'] . ',' . $_FILES['image3']['name'] . ',' . $_FILES['image4']['name'] ,
+":PictureRefs" => $dir . $_FILES['image1']['name'] . ',' . $dir . $_FILES['image2']['name'] . ',' . $dir . $_FILES['image3']['name'] . ',' . $dir . $_FILES['image4']['name'] ,
 ":PreviousOwners" => $_POST['PreviousOwners'],
 ":Category" => $_POST['Category'],
 ":FourWheelDrive" => $_POST['FourWheelDrive'],
@@ -145,9 +147,17 @@ if (isset($_POST['submitted'])) {
 		 	$erun = 'Error, Vehicle NOT Saved ' . $query->errorCode();
 	
 		
-	}
-		
-	} else if ($_GET['delete_image']) {
+	} 
+	
+
+}
+
+
+
+}
+
+else { 
+	if ($_GET['delete_image']) {
 		
 		$query = $dbo->prepare("UPDATE stock SET PictureRefs=',,,' WHERE id= :id");
 		
@@ -156,14 +166,16 @@ if (isset($_POST['submitted'])) {
 			
 		if ($query) {
 			$erun = 'All Images Deleted';
+			header ("Location: car-edit.php?id=$id");
 		} 
 		else {
 			$erun = 'Error, Images NOT Deleted';
 		}	
+}
+		
+	
 		
 	}	
-
-} 
 
 
 $query = $dbo->prepare("SELECT * FROM stock WHERE id=:id");
@@ -209,7 +221,6 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
   
 
 }
-
 
 
 ?><!DOCTYPE html>
@@ -321,46 +332,46 @@ Enter the Transmission<br />
 <option value="Automatic">Automatic</option>
 </select><br /><br />
 
-<?php if (empty($images[0])) { ?>
+<?php if (empty($images[0]) || $images[0]==$dir) { ?>
 Upload Image 1<br />
 <input name="image1" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
 <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
 <?php } else { ?>
 Current Image<br />
-<img src="../../images/uploads/<?php echo $images[0]; ?>" alt="" /><br />
+<img src="<?php echo $images[0]; ?>" alt="" /><br />
 <input type="hidden" name="image1" value="<?php echo $images[0]; ?>" />
 
 <?php } ?>
 
-<?php if (empty($images[1])) { ?>
+<?php if (empty($images[1]) || $images[1]==$dir) { ?>
 Upload Image 2<br />
 <input name="image2" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
 <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
 <?php } else { ?>
 Current Image<br />
-<img src="../../images/uploads/<?php echo $images[1]; ?>" alt="" /><br />
+<img src="<?php echo $images[1]; ?>" alt="" /><br />
 <input type="hidden" name="image2" value="<?php echo $images[1]; ?>" />
 
 <?php } ?>
 
-<?php if (empty($images[2])) { ?>
+<?php if (empty($images[2]) || $images[2]==$dir) { ?>
 Upload Image 3<br />
 <input name="image3" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
 <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
 <?php } else { ?>
 Current Image<br />
-<img src="../../images/uploads/<?php echo $images[2]; ?>" alt="" /><br />
+<img src="<?php echo $images[2]; ?>" alt="" /><br />
 <input type="hidden" name="image3" value="<?php echo $images[2]; ?>" />
 
 <?php } ?>
 
-<?php if (empty($images[3])) { ?>
+<?php if (empty($images[3]) || $images[3]==$dir) { ?>
 Upload Image 4<br />
 <input name="image4" type="file" onchange="checkOneFileUpload(this,'JPG,JPEG,PNG',true,'','','','','','','')" />
 <img src="../images/icon-required-field.gif" alt="This is a required field and *MUST* be completed" name="required-field-icon" width="18" height="18" hspace="5" vspace="0" border="0" style="vertical-align:top;" /><br /><br />
 <?php } else { ?>
 Current Image<br />
-<img src="../../images/uploads/<?php echo $images[3]; ?>" alt="" /><br />
+<img src="<?php echo $images[3]; ?>" alt="" /><br />
 <input type="hidden" name="image4" value="<?php echo $images[3]; ?>" />
 
 <?php } ?>

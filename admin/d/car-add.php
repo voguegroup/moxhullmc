@@ -61,6 +61,8 @@ if (isset($_POST['submitted'])) {
 	}
 	
 	if (!$erun) {
+		
+		$dir = 'http://moxhullmc.wearefundamental.com/images/uploads/';
 
 	$query = $dbo->prepare("INSERT INTO stock (`Feed_ID`,
   `Vehicle_ID`,
@@ -151,7 +153,7 @@ if (isset($_POST['submitted'])) {
 ":EngineSize" => $_POST['EngineSize'],
 ":Price" => $_POST['Price'],
 ":Transmission" => $_POST['Transmission'],
-":PictureRefs" => $_FILES['image1']['name'] . ',' . $_FILES['image2']['name'] . ',' . $_FILES['image3']['name'] . ',' . $_FILES['image4']['name'] ,
+":PictureRefs" => $dir . $_FILES['image1']['name'] . ',' . $dir . $_FILES['image2']['name'] . ',' . $dir . $_FILES['image3']['name'] . ',' . $dir . $_FILES['image4']['name'] ,
 ":ServiceHistory" => $_POST['ServiceHistory'],
 ":PreviousOwners" => $_POST['PreviousOwners'],
 ":Category" => $_POST['Category'],

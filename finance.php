@@ -10,7 +10,8 @@ if ($_POST['length']) {
 }
 if ($_POST) {
 	
-	$total = ($cashprice - $deposit) * $length / 0.05;
+	$gross = ($cashprice - $deposit) * $length;
+	$total = $gross * 0.05;
 }
 ?><!doctype html>
 <!--[if lt IE 7 ]><html lang="en" class="no-js ie6"> <![endif]-->
